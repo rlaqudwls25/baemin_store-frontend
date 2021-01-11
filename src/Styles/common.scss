@@ -1,0 +1,30 @@
+// Variables
+$gray0: #f6f6f6;
+$gray1: #c0c0c0;
+$gray2: #717171;
+$bm-black: #333333;
+$bm-beach: #29C1BC;
+$bm-sale: #EC2E3E;
+$bm-discount:#ff6350;
+
+$web-width: 1200px;
+
+// Extend
+%flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexAlign {
+  display: flex;
+  align-items: center;
+}
+
+// Mixin(Responsive)
