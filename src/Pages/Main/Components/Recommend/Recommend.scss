@@ -1,0 +1,32 @@
+@import '../../../../Styles/common.scss';
+
+.recommend-item {
+  width: 100%;
+  height: 295px;
+  margin-bottom: 30px; 
+
+  a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: $bm-black;
+
+    img {
+      width: 872px;
+      height: 100%;
+      border: 1px solid black;
+      object-fit: cover;
+    }
+    div {
+      padding: 10px;
+      margin-left: 20px;
+      .recommend-item-title { 
+        font-size: 30px; 
+        margin-bottom: 8px;
+      }
+      .recommend-item-desc {
+        font-size: 14px;
+      }
+    }
+  }
+}
