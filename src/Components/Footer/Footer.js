@@ -12,11 +12,11 @@ export default class Footer extends Component {
           </section>
           <section className="footer-context">
             <ul>
-              <li><Link href="/">공지사항</Link></li>
-              <li><Link href="/">1:1문의</Link></li>
-              <li><Link href="/">이용약관</Link></li>
-              <li><Link href="/">개인정보처리방침</Link></li>
-              <li><Link href="/">판매처 안내</Link></li>
+              <li key="공지사항"><Link href="/">공지사항</Link></li>
+              <li key="1:1문의"><Link href="/">1:1문의</Link></li>
+              <li key="이용약관"><Link href="/">이용약관</Link></li>
+              <li key="개인정보처리방침"><Link href="/">개인정보처리방침</Link></li>
+              <li key="판매처 안내"><Link href="/">판매처 안내</Link></li>
             </ul>
             <div className="footer-info-list info-list1">
               <dl>
