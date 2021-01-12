@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FOOTERLINK } from '../../Data/Config'
 import './Footer.scss';
 
 export default class Footer extends Component {
@@ -11,14 +12,12 @@ export default class Footer extends Component {
             <img alt="logo-footer" src="./Images/logo-footer.png" />
           </section>
           <section className="footer-context">
-            <ul>
-              <li key="공지사항"><Link href="/">공지사항</Link></li>
-              <li key="1:1문의"><Link href="/">1:1문의</Link></li>
-              <li key="이용약관"><Link href="/">이용약관</Link></li>
-              <li key="개인정보처리방침"><Link href="/">개인정보처리방침</Link></li>
-              <li key="판매처 안내"><Link href="/">판매처 안내</Link></li>
+            <ul className="footer-link-list">
+              {FOOTERLINK.map(linkInfo =>
+                <li key={linkInfo.key}><Link href={linkInfo.link}>{linkInfo.desc}</Link></li>
+              )}
             </ul>
-            <div className="footer-info-list">
+            <div className="footer-info-row">
               <dl>
                 <dt>상호 :</dt>
                 <dd>(주)우아한형제들</dd>
@@ -39,7 +38,7 @@ export default class Footer extends Component {
                 <a href="/">[사업자정보확인]</a>
               </dl>
             </div>
-            <div className="footer-info-list">
+            <div className="footer-info-row">
               <dl>
                 <dt>대표번호 :</dt>
                 <dd>1670-9902</dd>
@@ -49,7 +48,7 @@ export default class Footer extends Component {
                 <dd>월-금 13:00~18:00(주말/공휴일 휴무)</dd>
               </dl>
             </div>
-            <div className="footer-info-list">
+            <div className="footer-info-row">
               <dl>
                 <dt>팩스번호 :</dt>
                 <dd>050-605-0041</dd>
@@ -63,7 +62,7 @@ export default class Footer extends Component {
                 <dd>@baemin_store</dd>
               </dl>
             </div>
-            <div className="footer-info-list">
+            <div className="footer-info-row">
               <dl>
                 <dt>주소 :</dt>
                 <dd>서울특별시 송파구 위례성대로 2 장은빌딩</dd>
