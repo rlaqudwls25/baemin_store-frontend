@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { FOOTERLINK } from '../../Data/Config'
+import { FOOTERLINK } from './FooterData'
 import './Footer.scss';
 
 export default class Footer extends Component {
