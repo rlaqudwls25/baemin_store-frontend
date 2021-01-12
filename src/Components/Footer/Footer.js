@@ -18,7 +18,7 @@ export default class Footer extends Component {
               <li key="개인정보처리방침"><Link href="/">개인정보처리방침</Link></li>
               <li key="판매처 안내"><Link href="/">판매처 안내</Link></li>
             </ul>
-            <div className="footer-info-list info-list1">
+            <div className="footer-info-list">
               <dl>
                 <dt>상호 :</dt>
                 <dd>(주)우아한형제들</dd>
@@ -39,7 +39,7 @@ export default class Footer extends Component {
                 <a href="/">[사업자정보확인]</a>
               </dl>
             </div>
-            <div className="footer-info-list info-list2">
+            <div className="footer-info-list">
               <dl>
                 <dt>대표번호 :</dt>
                 <dd>1670-9902</dd>
@@ -49,7 +49,7 @@ export default class Footer extends Component {
                 <dd>월-금 13:00~18:00(주말/공휴일 휴무)</dd>
               </dl>
             </div>
-            <div className="footer-info-list info-list3">
+            <div className="footer-info-list">
               <dl>
                 <dt>팩스번호 :</dt>
                 <dd>050-605-0041</dd>
@@ -63,7 +63,7 @@ export default class Footer extends Component {
                 <dd>@baemin_store</dd>
               </dl>
             </div>
-            <div className="footer-info-list info-list4">
+            <div className="footer-info-list">
               <dl>
                 <dt>주소 :</dt>
                 <dd>서울특별시 송파구 위례성대로 2 장은빌딩</dd>
