@@ -13,9 +13,15 @@ export default class Footer extends Component {
           </section>
           <section className="footer-context">
             <ul className="footer-link-list">
-              {FOOTERLINK.map(linkInfo =>
-                <li key={linkInfo.key}><Link href={linkInfo.link}>{linkInfo.desc}</Link></li>
-              )}
+              {
+                FOOTERLINK.map((linkInfo) => 
+                  <li key={linkInfo.key}>
+                    <Link to={linkInfo.link}>
+                      {linkInfo.desc}
+                    </Link>
+                  </li>
+                )
+              }
             </ul>
             <div className="footer-info-row">
               <dl>
