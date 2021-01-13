@@ -21,7 +21,6 @@ class Category extends Component {
   
   render() { 
     const {itemList} = this.state;
-    //console.log("itemList" , itemList);
 
     return (
       <Fragment>
