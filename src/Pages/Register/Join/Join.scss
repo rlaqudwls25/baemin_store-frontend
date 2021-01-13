@@ -15,6 +15,10 @@
     width: 750px;
     margin: 40px auto 0;
 
+    h3 {
+      font-weight: normal;
+    }
+
     .important-msg {
       position: absolute;
       top: 5px;
@@ -23,35 +27,129 @@
 
     table {
       width: 100%;
-      margin-top: 20px;
+      margin-top: 40px;
       border-top: 1.5px solid $gray2;
       font-size: 12px;
 
       tr {
         border-bottom: 1px solid #dcdcdc;
+
         th {
           padding: 10px 25px;
           background: #fbfbfb;
           border-bottom: 1px solid #dcdcdc;
           text-align: left;
         }
+
         td {
           padding: 15px 0 15px 15px;
           border-bottom: 1px solid #dcdcdc;
           color: $bm-black;
           .input-wrap {
+
             input, select {
               height: 30px;
               padding: 0 10px;
-              margin: 0 5px 10px 0;
+              margin-right: 5px;
               border: 1px solid #dcdcdc;
               color: $bm-black;
+              font-size: 12px;
+              outline: 0;
               &[type="text"] { width: 380px; }
+              &[name="email"] { width: 250px; }
+              &[name="phone"], &[name="call"], &[name="address"] { width: 190px; }
+            }
+
+            p {
+              display: none;
+              padding-left: 2px;
+              margin-top: 7px;
+              font-weight: 600;
+            }
+            &.msg {
+              input, select {
+                border-color: $bm-black;
+              }
+              p {
+                display: block;
+              }
+              p.pass {
+                color: #77BAFF;
+              }
+            }
+
+            .input-check-wrap {
+              position: relative;
+              margin-top: 7px;
+
+              input[type="checkbox"] {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip:rect(0,0,0,0);
+                border: 0;
+              }
+
+              input[type="checkbox"] + label {
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+              }
+
+              input[type="checkbox"] + label::before {
+                content: ' ';
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                line-height: 12px;
+                font-size: 10px;
+                margin: -2px 5px 0 0;
+                text-align: center;
+                vertical-align: middle;
+                background: #ffffff;
+                border: 1px solid #dcdcdc;
+                border-radius: 3px;
+                box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+              }
+
+              input[type="checkbox"] + label:active:before, 
+              input[type="checkbox"]:checked + label:active:before {
+                box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+              }
+
+              input[type="checkbox"] + label:hover:before {
+                content: '\2714';
+                color: #dcdcdc;
+              }
+
+              input[type="checkbox"]:checked + label::before {
+                content: '\2714';
+                color: #ffffff;
+                background: $bm-black;
+                box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+              }
+            }
+
+            .search-address-btn {
+              padding: 5px 10px;
+              border: 1px solid $gray2;
+              color: $bm-black;
+              font-size: 12px;
+            }
+
+            .more-address {
+              input {
+                margin-top: 5px;
+              }
             }
           }
-          p {
-            display: none;
-          }
+          
         }
       }
     }
@@ -59,7 +157,6 @@
     span { 
       position: relative; 
       font-size: 12px;
-      font-weight: bold;
     }
     span.important::before {
       content: '';
@@ -71,21 +168,21 @@
       background: #000000;
     }
 
-    .birth-title {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 20px;
-    }
-
     .btn-container {
       text-align: center;
       margin-top: 40px;
 
-      button {
-        padding: 15px 40px;
-        margin: 0 10px;
-        border: 1px solid #333333;
-        font-size: 18px;
+      a, button {
+        padding: 15px 50px;
+        margin: 0 5px;
+        border: 1px solid #dcdcdc;
+        color: $bm-black;
+        font-size: 14px;
+        font-weight: 700;
+        &.submit-btn {
+          background: $bm-black;
+          color: #ffffff;
+        }
       }
     }
   }
