@@ -42,7 +42,7 @@ const ItemList = [
 
   {
     itemId:6,
-    url: "https://store.baemin.com/data/goods/20/12/50/334/334_main_093.jpg",
+    url: "https://store.baemin.com/data/goods/20/07/30/294/294_main_09.jpg",
     sale: "빈칸",
     item: "떡볶이 에디션",
     price: "5,000원"
