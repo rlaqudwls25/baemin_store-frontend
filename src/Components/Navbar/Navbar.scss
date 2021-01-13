@@ -104,12 +104,13 @@
           color: $bm-black;
         }
 
-        &.active a {
+        &.focus a {
           border-bottom: 2px solid $bm-beach;
           color: $bm-beach;
           font-weight: bold;
+          transition: all .2s ease;
         }
-        &.active:hover a {
+        &.focus:hover a {
           color: initial;
         }
       }

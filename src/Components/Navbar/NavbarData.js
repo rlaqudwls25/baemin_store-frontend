@@ -1,31 +1,31 @@
-export const HEADERLINK = [
+export const HEADERMENUS = [
   {
     id: 0,
     key: 'login',
     content: '로그인',
-    link: '/',
+    link: '/login',
   },
   {
     id: 1,
     key: 'register',
     content: '회원가입',
-    link: '/',
+    link: '/register/enter_join',
   },
   {
     id: 2,
     key: 'mypage',
     content: '마이페이지',
-    link: '/',
+    link: '/mypage',
   },
   {
     id: 3,
     key: 'cart',
     content: '장바구니',
-    link: '/',
+    link: '/cart',
   },
 ]
 
-export const FOOTERLINK = [
+export const FOOTERMENUS = [
   {
     id: 0,
     key: 'all',

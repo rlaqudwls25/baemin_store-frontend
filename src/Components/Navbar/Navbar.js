@@ -1,23 +1,48 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { HEADERLINK, FOOTERLINK } from './NavbarData'
+import { HEADERMENUS, FOOTERMENUS } from './NavbarData'
 import './Navbar.scss'
 
 export default class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerMenus: [],
+      footerMenus: [],
+      focusdMenu: '',
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      headerMenus: HEADERMENUS,
+      footerMenus: FOOTERMENUS,
+    })
+  }
+
+  updateFocus = (key) => {
+    this.setState({ focusdMenu: key })
+  }
 
   render() {
+    const { headerMenus, footerMenus, focusdMenu } = this.state;
+    const { updateFocus } = this;
+
     return (
       <nav className="navigation">
         <header>
           <div className="nav-header-wrap">
             <ul>
-              {HEADERLINK.map(linkInfo => 
-                <li key={linkInfo.key} class={`nav-${linkInfo.key}`}>
-                  <Link to={linkInfo.link}>
-                    {linkInfo.content}
-                    {linkInfo.key === 'cart' && <span className="cart-count">0</span>}
-                  </Link>
-                </li>  
+              {headerMenus.map((menu) => {
+                const { key, content, link} = menu;
+                return(
+                  <li key={key} class={`nav-${key}`}>
+                    <Link to={link}>
+                      {content}
+                      {key === 'cart' && <span className="cart-count">0</span>}
+                    </Link>
+                  </li>  
+                )}
               )}
             </ul>
           </div>
@@ -31,10 +56,17 @@ export default class Navbar extends Component {
         </section>
         <footer>
           <ul>
-            {FOOTERLINK.map(linkInfo => 
-              <li key={linkInfo.key}>
-                <Link to={linkInfo.link}>{linkInfo.content}</Link>
-              </li>  
+            {footerMenus.map((menu) => {
+              const { key, content, link} = menu;
+              return(
+                <li 
+                  key={key} 
+                  className={focusdMenu === key && 'focus'}
+                  onClick={() => updateFocus(key)}
+                >
+                  <Link to={link}>{content}</Link>
+                </li>  
+              )}
             )}
           </ul>
         </footer>
