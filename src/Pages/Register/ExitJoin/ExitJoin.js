@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Complete extends Component {
+export default class ExitJoin extends Component {
   render() {
     return (
       <div>

@@ -1,1 +1,92 @@
-@import '../../Styles/common.scss'
+@import '../../../Styles/common.scss';
+
+.join {
+  margin-top: 200px;
+  margin-bottom: 100px;
+
+  .join-stage {
+    li:nth-child(2) {
+      color: #000000;
+    }
+  }
+
+  .join-form {
+    position: relative;
+    width: 750px;
+    margin: 40px auto 0;
+
+    .important-msg {
+      position: absolute;
+      top: 5px;
+      right: 0;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-top: 1.5px solid $gray2;
+      font-size: 12px;
+
+      tr {
+        border-bottom: 1px solid #dcdcdc;
+        th {
+          padding: 10px 25px;
+          background: #fbfbfb;
+          border-bottom: 1px solid #dcdcdc;
+          text-align: left;
+        }
+        td {
+          padding: 15px 0 15px 15px;
+          border-bottom: 1px solid #dcdcdc;
+          color: $bm-black;
+          .input-wrap {
+            input, select {
+              height: 30px;
+              padding: 0 10px;
+              margin: 0 5px 10px 0;
+              border: 1px solid #dcdcdc;
+              color: $bm-black;
+              &[type="text"] { width: 380px; }
+            }
+          }
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+
+    span { 
+      position: relative; 
+      font-size: 12px;
+      font-weight: bold;
+    }
+    span.important::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -10px;
+      width: 4px;
+      height: 4px;
+      background: #000000;
+    }
+
+    .birth-title {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 40px;
+
+      button {
+        padding: 15px 40px;
+        margin: 0 10px;
+        border: 1px solid #333333;
+        font-size: 18px;
+      }
+    }
+  }
+}
