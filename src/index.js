@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-import Routes from './Routes';
+import Routes from './Routes'
+import './Styles/reset.scss';
+import './Styles/common.scss';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
