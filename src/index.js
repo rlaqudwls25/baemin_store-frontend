@@ -1,11 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
-import './index.css';
-import Routes from './Routes';
-=======
 import Routes from './Routes'
->>>>>>> main
 import './Styles/reset.scss';
 import './Styles/common.scss';
 import reportWebVitals from './reportWebVitals';
