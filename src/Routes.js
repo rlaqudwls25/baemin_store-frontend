@@ -5,10 +5,6 @@ import Category from './Pages/Category/Category';
 import Item from './Components/Item/Item';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
-<<<<<<< HEAD
-import Main from './Pages/Main/Main';
-=======
->>>>>>> main
 
 class Routes extends Component {
   render() {
