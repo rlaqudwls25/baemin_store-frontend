@@ -59,7 +59,6 @@ class Login extends Component {
       })
         .then((response) => response.json())
         .then((result) => {
-          console.log("결과: ", result);
           const { MESSAGE, TOKEN } = result;
           if (MESSAGE === "ACCOUNT NOT FOUND") {
             alert("존재하지 않는 계정입니다.");
@@ -69,9 +68,8 @@ class Login extends Component {
             alert("아이디와 비밀번호를 다시 확인해주세요.");
             return;
           }
-          if (TOKEN) {
+          if (MESSAGE && TOKEN) {
             localStorage.setItem("token", TOKEN);
-            console.log(TOKEN);
             this.props.history.push("/");
           }
         });
@@ -105,8 +103,8 @@ class Login extends Component {
     } = this.state;
     const { updateValue, handleLogin, handleOrder } = this;
     return (
-      <section>
-        <form className="login">
+      <main className="Login">
+        <form className="login-form">
           <h3>회원 로그인</h3>
           <input
             type="text"
@@ -152,7 +150,7 @@ class Login extends Component {
             </ul>
           </div>
         </form>
-        <form className="login-order">
+        <form className="login-order-form">
           <h3>비회원 주문조회 하기</h3>
           <input
             type="text"
@@ -176,7 +174,7 @@ class Login extends Component {
             조회하기
           </button>
         </form>
-      </section>
+      </main>
     );
   }
 }

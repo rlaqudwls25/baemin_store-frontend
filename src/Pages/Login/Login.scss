@@ -1,9 +1,9 @@
 @import "../../Styles/common.scss";
 
-section {
+.Login {
   width: 593px;
-  height: 854px;
-  margin: 200px auto 0;
+  margin: 240px auto 60px;
+  padding: 30px 0;
 
   form {
     @extend %flexCenter;
@@ -11,12 +11,12 @@ section {
     width: 303px;
     margin: 0 auto;
 
-    &.login {
+    &.login-form {
       padding-bottom: 40px;
       border-bottom: 1px solid $gray1;
     }
 
-    &.login-order {
+    &.login-order-form {
       padding-top: 40px;
     }
 
