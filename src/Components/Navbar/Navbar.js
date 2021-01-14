@@ -7,17 +7,8 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerMenus: [],
-      footerMenus: [],
       focusdMenu: '',
     }
-  }
-
-  componentDidMount() {
-    this.setState({
-      headerMenus: HEADERMENUS,
-      footerMenus: FOOTERMENUS,
-    })
   }
 
   updateFocus = (key) => {
@@ -25,7 +16,7 @@ export default class Navbar extends Component {
   }
 
   render() {
-    const { headerMenus, footerMenus, focusdMenu } = this.state;
+    const { focusdMenu } = this.state;
     const { updateFocus } = this;
 
     return (
@@ -33,7 +24,7 @@ export default class Navbar extends Component {
         <header>
           <div className="nav-header-wrap">
             <ul>
-              {headerMenus.map((menu) => {
+              {HEADERMENUS.map((menu) => {
                 const { key, content, link} = menu;
                 return(
                   <li key={key} class={`nav-${key}`}>
@@ -56,7 +47,7 @@ export default class Navbar extends Component {
         </section>
         <footer>
           <ul>
-            {footerMenus.map((menu) => {
+            {FOOTERMENUS.map((menu) => {
               const { key, content, link} = menu;
               return(
                 <li 
@@ -74,3 +65,4 @@ export default class Navbar extends Component {
     )
   }
 }
+
