@@ -31,26 +31,26 @@ class Category extends Component {
             <div className="pick_list_box">
               <ul className="pick_list">
                 <li className="pick_list_sort_recommend">추천순</li>
-                <li className="pick_list_sort">인기순</li>
-                <li className="pick_list_sort">최신순</li>
-                <li className="pick_list_sort">낮은가격순</li>
-                <li className="pick_list_sort">높은가격순</li>
+                <li>인기순</li>
+                <li>최신순</li>
+                <li>낮은가격순</li>
+                <li>높은가격순</li>
               </ul>
             </div>
           </div>   
           <div className="goods_list_item">
             <ul>
-             {itemList.map((item => {
-               return (
-               <Item
-                 url={item.url}
-                 sale={item.sale}
-                 title={item.item}
-                 price={item.price}
-                 itemId={item.itemId}
-               />
-               )
-             }))}
+              {itemList.map((item => {
+                return (
+                <Item
+                  url={item.url}
+                  sale={item.sale}
+                  title={item.item}
+                  price={item.price}
+                  itemId={item.itemId}
+                />
+                )
+              }))}
             </ul>
           </div>
           <div className="pagination">
@@ -61,7 +61,7 @@ class Category extends Component {
               <li><Link to=""/>4</li>
             </ul>
           </div>
-         </div>
+          </div>
       </section>
       </Fragment>
     );

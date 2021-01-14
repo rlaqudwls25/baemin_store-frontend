@@ -1,8 +1,4 @@
 @import '../../Styles/common.scss';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,300&family=Nanum+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,300&display=swap');
 
 .category{
   margin-top: 200px;
@@ -29,15 +25,15 @@
         display: flex;
         font-family: 'Nanum Gothic', sans-serif;
         font-size: 13px;
+        &.pick_list li{
+          margin: 0 20px;
+          cursor: pointer;
+        }
         .pick_list_sort_recommend{
           margin: 0 20px;
           cursor: pointer;
           color: $bm-beach;
         }
-       .pick_list_sort{
-         margin: 0 20px;
-         cursor: pointer;
-       }
       }
     }
   }
@@ -87,18 +83,19 @@
   margin: 0 auto;
   padding: 40px 0px;
   width: 900px;
-  &.pagination ul{
+  & ul{
     display: flex;
     font-size: 15px;
+    & li{
+      padding: 0px 15px;
+      font-family: 'Nanum Gothic', sans-serif;
+    }
     .page_one{
       font-weight: bold;
       font-family: 'Nanum Gothic', sans-serif;
     }
   }
-  &.pagination li{
-    padding: 0px 15px;
-    font-family: 'Nanum Gothic', sans-serif;
-  }
+  
 }
 
 
