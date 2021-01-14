@@ -40,17 +40,17 @@ class Category extends Component {
           </div>   
           <div className="goods_list_item">
             <ul>
-             {itemList.map((item => {
-               return (
-               <Item
-                 url={item.url}
-                 sale={item.sale}
-                 title={item.item}
-                 price={item.price}
-                 itemId={item.itemId}
-               />
-               )
-             }))}
+              {itemList.map((item => {
+                return (
+                <Item
+                  url={item.url}
+                  sale={item.sale}
+                  title={item.item}
+                  price={item.price}
+                  itemId={item.itemId}
+                />
+                )
+              }))}
             </ul>
           </div>
           <div className="pagination">
@@ -61,7 +61,7 @@ class Category extends Component {
               <li><Link to=""/>4</li>
             </ul>
           </div>
-         </div>
+          </div>
       </section>
       </Fragment>
     );

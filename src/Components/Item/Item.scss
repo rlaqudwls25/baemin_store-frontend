@@ -3,7 +3,6 @@
 .Item{
   display: inline-block;
   .item_list{
-    display: inline-block;
     margin: 20px 0px;
     .item_cont{
       padding: 0px 10px;
@@ -47,13 +46,3 @@
 .item_tit_box strong{
   color: $bm-black;
 }
-
-
-
-
-
-
-
-
-
-
