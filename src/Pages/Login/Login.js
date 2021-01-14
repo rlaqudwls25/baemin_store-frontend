@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { SIGNIN_API } from "../../Data/Config";
 import "./Login.scss";
 
 class Login extends Component {
@@ -35,41 +36,45 @@ class Login extends Component {
     });
   };
 
-  handleLogin = () => {
+  handleLogin = (event) => {
+    event.preventDefault();
     const { loginId, loginPw } = this.state;
-    const checkId = loginId.includes("@");
-    const checkPw = loginPw.length >= 4;
+    const checkId = loginId.length >= 4 && loginId.length <= 20;
+    const checkPw = loginPw.length >= 8 && loginPw.length <= 15;
     if (!checkId) {
-      alert("아이디는 @를 포함해야 합니다.");
+      alert("아이디는 4-20글자의 값입니다.");
       return;
     }
     if (!checkPw) {
-      alert("비밀번호는 4자리 이상이어야 합니다.");
+      alert("비밀번호는 8-15글자의 영문/숫자/특수문자로 입력하세요.");
       return;
     }
     if (checkId && checkPw) {
-      alert("로그인 서버 연결예정");
-      // fetch(SIGNIN, {
-      //   method: "POST",
-      //   body: JSON.stringify({
-      //     account: loginId,
-      //     password: loginPw,
-      //   }),
-      // })
-      //   .then((response) => response.json())
-      //   .then((result) => {
-      //     console.log("결과: ", result);
-      //     if (result.token) {
-      //       localStorage.setItem("token", result.token);
-      //       this.props.history.push("/");
-      //     }
-      //     else if (result.message === 'INCORRECT') {
-      //       alert('아이디 또는 비밀번호 값이 올바르지 않습니다.')
-      //     }
-      //     else if (result.message === 'UNAUTHORIZED') {
-      //       alert('고객님은 배민문방구 회원이 아닙니다.')
-      //     }
-      //   });
+      fetch(SIGNIN_API, {
+        method: "POST",
+        body: JSON.stringify({
+          account: loginId,
+          password: loginPw,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log("결과: ", result);
+          const { MESSAGE, TOKEN } = result;
+          if (MESSAGE === "ACCOUNT NOT FOUND") {
+            alert("존재하지 않는 계정입니다.");
+            return;
+          }
+          if (MESSAGE === "INVALID ACCOUNT") {
+            alert("아이디와 비밀번호를 다시 확인해주세요.");
+            return;
+          }
+          if (TOKEN) {
+            localStorage.setItem("token", TOKEN);
+            console.log(TOKEN);
+            this.props.history.push("/");
+          }
+        });
     }
   };
 
