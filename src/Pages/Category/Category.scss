@@ -34,10 +34,10 @@
           cursor: pointer;
           color: $bm-beach;
         }
-       .pick_list_sort{
-         margin: 0 20px;
-         cursor: pointer;
-       }
+        .pick_list_sort{
+          margin: 0 20px;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -78,14 +78,13 @@
   }
 }
 
-
 .pagination {
   display: flex;
   justify-content: center;
   margin: 0 auto;
   padding: 40px 0px;
   width: 900px;
-  &.pagination ul{
+  & ul{
     display: flex;
     font-size: 15px;
     .page_one{
@@ -93,9 +92,10 @@
       font-family: 'Nanum Gothic', sans-serif;
     }
   }
-  &.pagination li{
+  & li{
     padding: 0px 15px;
     font-family: 'Nanum Gothic', sans-serif;
+    cursor: pointer;
   }
 }
 
