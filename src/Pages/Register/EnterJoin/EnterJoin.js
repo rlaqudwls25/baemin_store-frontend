@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import JoinStage from '../Components/JoinStage/JoinStage';
 import './EnterJoin.scss';
 
 export default class EnterJoin extends Component {
   render() {
     return (
       <div className="enter-join">
+        <JoinStage />
         <div className="link-container">
           <section className="link-buttons">
             <div className="link-to-join">

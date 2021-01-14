@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import JoinStage from '../Components/JoinStage/JoinStage';
 import SelectBirth from './SelectBirth/SelectBirth';
+import { SIGNUP_API } from  '../../../Data/Config';
 import './Join.scss';
 
 class Join extends Component {
@@ -45,6 +46,7 @@ class Join extends Component {
   }
 
   submitJoinInfo = (e, condition) => {
+    const { id, pw, name, email, phone } = this.state;
     e.preventDefault();
     for (let key in condition) {
       if (condition[key] === false) {
@@ -52,20 +54,71 @@ class Join extends Component {
         return;
       }
     }
-    this.props.history.push('/register/exit_join');
+    fetch(SIGNUP_API, {
+      method: "POST",
+      body: JSON.stringify({
+        account: id,
+        password: pw,
+        name: name,
+        email: email,
+        phone: phone,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        const message = result;
+        if (message === 'NOT VALID ACCOUNT') {
+          alert('아이디는 4-20자리 사이입니다. ');
+          return;
+        }
+        if (message === 'PASSWORD SHOULD BE OVER 8 AND UNDER 17') {
+          alert('비밀번호는 8-16자리 사이입니다.');
+          return;
+        }
+        if (message === 'PASSWORD SHOULD BE ONLY ALPHABET AND DIGITS') {
+          alert('비밀번호는 영문, 숫자를 반드시 포함해야 합니다.');
+          return;
+        }
+        if (message === '비밀 번호는 1개 이상의 특수문자(@$!%*#?&)를 포함해야합니다.') {  // 백엔드 수정예정
+          alert('비밀번호는 특수문자(@$!%*#?&)를 반드시 포함해야 합니다.');
+          return;
+        }
+        if (message === 'NOT VALUD NAME') {
+          alert('이름을 입력해주세요.');
+          return;
+        }
+        if (message === 'NOT VALID EMAIL') {
+          alert('유효하지 않은 이메일 형식입니다.');
+          return;
+        }
+        if (message === 'NOT VALID PHONE') {
+          alert('휴대폰번호 11자리를 입력해주세요.');
+          return;
+        }
+        if (message === 'INFORMATION REGISTERED ALREADY!') {
+          alert('이미 등록된 사용자입니다.');
+          return;
+        }
+        if (message === 'KEY ERROR FOUND!' || message === 'VALUE ERROR FOUND!') {
+          console.log("Request 에러: ", message);
+          return;
+        }
+        if (message === 'SUCCESS TO MAKE ACCOUNT') {
+          this.props.history.push('/register/exit_join');
+        }
+      })
   }
 
   render() {
-    const { id, pw, pwAgain, name, email, phone, call, address } = this.state;
+    const { id, pw, pwAgain, name, email, phone, call } = this.state;
     const { updateValue, completeEmail, submitJoinInfo } = this;
     const condition = {
-      아이디: id.length >= 4,
-      비밀번호: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,15}$/.test(pw),
+      아이디: id.length >= 4 && id.length <=20,
+      비밀번호: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$/.test(pw),
       '비밀번호 확인': pwAgain === pw,
       이름: name !== "",
       이메일: /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i.test(email),
       휴대폰번호: phone !== "",
-      전화번호: call !== "",
     }
 
     return (
@@ -188,7 +241,7 @@ class Join extends Component {
               </tr>
               <tr>
                 <th>
-                  <span className="important">전화번호</span>
+                  <span>전화번호</span>
                 </th>
                 <td>
                   <div className="input-wrap">

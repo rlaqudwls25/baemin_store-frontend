@@ -2,15 +2,20 @@
 
 .enter-join {
   width: 100%;
-  height: 460px;
-  margin-bottom: 60px;
+  margin-top: 230px;
+
+  .join-stage {
+    li:nth-child(1) {
+      color: #000000;
+    }
+  }
 
   .link-container {
     @extend %flexCenter;
     flex-direction: column;
     width: $web-width;
-    padding: 40px 0;
-    margin: 50px auto;
+    padding: 55px 0;
+    margin: 60px auto;
 
     .link-buttons {
       width: 460px;

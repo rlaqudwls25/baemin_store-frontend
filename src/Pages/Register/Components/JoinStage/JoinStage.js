@@ -6,7 +6,7 @@ export default class JoinStage extends Component {
     return (
       <header className="join-stage">
         <ol>
-          <li>01 약관동의<span>▶︎</span></li>
+          <li>01 회원가입<span>▶︎</span></li>
           <li>02 정보입력<span>▶︎</span></li>
           <li>03 가입완료</li>
         </ol>
