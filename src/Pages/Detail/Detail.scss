@@ -1,0 +1,182 @@
+@import '../../Styles/common.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap');
+
+
+.content{
+  padding: 40px 0 0 0;
+  width: 1200px;
+  margin: 0 auto;
+  .item_photo_info_sec{
+    display: flex;
+    justify-content: center;
+    padding: 30px 30px;
+    .item_photo_view_box{
+      margin-top: 200px;
+      width: 500px;
+    
+      img{
+        width: 473px;
+      }
+    }
+    .item_info_box{
+      margin: 200px 0px 0px 110px;
+      width: 556px;
+      .item_datail_tit{
+        height: 585px;
+      }
+      h3{
+        padding: 0px 0px 30px 0px;
+        font-size: 30px;
+        color: $bm-black;
+      }
+      .item_detail_list{
+        margin: 10px 0 20px 0;
+        .item_price{
+          display: flex;
+          width: 100%;
+          padding: 4px 0px;
+          .price_name{
+            width: 100px;
+            font-size: 16px;
+            color: $gray2;
+          }
+          .price{
+            width: 450px;
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+        .item_delivery{
+          display: flex;
+          padding: 4px 0px;
+          color: $gray2;
+          .delivery_info{
+            width: 100px;
+          }
+          .delivery_price{
+            width: 450px;
+          }
+          .delivery_time{
+            padding: 8px 0px;
+          }
+        }
+        
+      }
+    }
+  }
+}
+.item_list_choice{
+  background-color: #f5f5f5;
+  .item_list_choice table{
+    display: table;
+    border-collapse: separate;
+    text-indent: initial;
+  }
+  .cart_prdt_name{
+    padding: 20px 0px 20px 20px;
+    .delivery_name{
+      width: 309px;
+    }
+    .delivery_name span{
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  .count{
+    display: flex;
+    width: 100px;
+    & input{
+      width: 43px;
+      height: 33px;
+      border: 1px solid #ccc;
+      text-align: center;
+      color: #3f3f3f;
+      background: white;
+    }
+    & span{
+      display: inline-block;
+    }
+    & button{
+      display: block;
+      width: 23px;
+      height: 17px;
+      text-indent: -9999px;
+    }
+    .up_goods_cnt{
+      background: url(https://store.baemin.com/data/skin/front/udweb_C/img/common/btn/btn_count_up.png);
+    }
+    .down_goods_cnt{
+      background: url(https://store.baemin.com/data/skin/front/udweb_C/img/common/btn/btn_count_down.png);
+    }
+  }
+}
+
+
+
+
+.item_total_box{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  top: 230px;
+  border-top: 1px solid $gray1;
+  padding-top: 16px;
+  & strong{
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    color: $bm-beach;
+  }
+  & span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #717171;
+  }
+}
+
+.btn_choice_box{
+  position: relative;
+  top: 250px;
+  text-align: right;
+  & button{
+    height: 52px;
+    font-weight: bold;
+  }
+  .btn_box{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .btn_add_wish{
+    width: 52px;
+    background: url(https://store.baemin.com/data/skin/front/udweb_C/img/custom/zzim_heart@3x.png);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    border: 1px solid $gray1;
+  }
+  .btn_add_cart{
+    width: 152px;
+    margin: 0px 10px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    text-align: center;
+  }
+  .btn_add_order{
+    width: 230px;
+    border: 1px solid #000;
+    background: #000;
+    color: #ccc;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
