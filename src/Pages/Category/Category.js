@@ -18,7 +18,6 @@ class Category extends Component {
       itemList: ItemList
     });
   }
-  
   render() { 
     const {itemList} = this.state;
 
@@ -31,10 +30,10 @@ class Category extends Component {
             <div className="pick_list_box">
               <ul className="pick_list">
                 <li className="pick_list_sort_recommend">추천순</li>
-                <li className="pick_list_sort">인기순</li>
-                <li className="pick_list_sort">최신순</li>
-                <li className="pick_list_sort">낮은가격순</li>
-                <li className="pick_list_sort">높은가격순</li>
+                <li>인기순</li>
+                <li>최신순</li>
+                <li>낮은가격순</li>
+                <li>높은가격순</li>
               </ul>
             </div>
           </div>   
