@@ -1,27 +1,45 @@
 import React, { Component } from 'react';
-import Recommend from './Components/Recommend/Recommend'
+import Carousel from './Components/Carousel/Carousel';
+import Item from '../../Components/Item/Item';
+import Recommend from './Components/Recommend/Recommend';
+import { ItemList } from '../../Data/Data';
 import './Main.scss';
 
 export default class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hotList: [],
+      newList: [],
+      saleList: [],
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      hotList: ItemList.slice(0,4),
+      newList: ItemList.slice(4,8),
+      saleList: ItemList.slice(8,12),
+    })
+  }
+
   render() {
+    const { hotList, newList, saleList } = this.state;
     return (
       <main className="main">
-        <div className="main-slider">
-          <img alt="슬라이더" src="./Images/default2.jpg" />
-          <ul className="slider-dotbox">
-            <li className="slider-dot focus"></li>
-            <li className="slider-dot"></li>
-            <li className="slider-dot"></li>
-          </ul>
-        </div>
+        <Carousel />
         <div className="main-item-container">
-          <section className="best-container">
+          <section className="hot-container">
             <h3>잘나가요</h3>
-            <div className="best-wrap"></div>
+            <div className="hot-wrap">
+              {hotList.map(item => <Item {...item} />)}
+            </div>
           </section>
           <section className="new-container">
             <h3>새로 나왔어요</h3>
-            <div className="new-wrap"></div>
+            <div className="new-wrap">
+              {newList.map(item => <Item {...item} />)}
+            </div>
           </section>
           <section className="recommend-container">
             <h3>선물하기 딱 좋아요!</h3>
@@ -32,7 +50,9 @@ export default class Main extends Component {
           </section>
           <section className="sale-container">
             <h3>지금은 할인 중</h3>
-            <div className="sale-wrap"></div>
+            <div className="sale-wrap">
+              {saleList.map(item => <Item {...item} />)}
+            </div>
           </section>
         </div>
       </main>

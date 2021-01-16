@@ -1,5 +1,14 @@
 //mock data 
-const ItemList = [
+
+//Slider Image
+export const ImageList = [
+  {id: 1, img: '/Images/slider1.png', link: '/'},
+  {id: 2, img: '/Images/slider2.jpg', link: '/'},
+  {id: 3, img: '/Images/slider3.png', link: '/'},
+  {id: 4, img: '/Images/default2.jpg', link: '/'},
+]
+
+export const ItemList = [
   {
     itemId:1,
     url: "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/20/2/3/0/2/4/0/CsYzT/3210230240_B.png",
@@ -85,4 +94,3 @@ const ItemList = [
     price: "60,000원"
   }
 ]
-export default ItemList;
