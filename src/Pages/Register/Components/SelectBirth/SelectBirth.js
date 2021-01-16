@@ -15,30 +15,37 @@ export default class SelectBirth extends Component {
   }
 
   componentDidMount() {
-    let yearArr = [null];
+    this.setDate();
+  }
+
+  setDate = () => {
     const nowYear = new Date().getFullYear();
-    for (let y = nowYear ; y > 1910 ; y-- ) {
-      yearArr.push(y);
-    }
-    let monthArr = [null];
-    for (let m = 1 ; m <= 12 ; m++) {
-      monthArr.push(m);
-    }
-    let dateArr = [null];
-    for (let d = 1 ; d <= 31 ; d++) {
-      dateArr.push(d);
-    }
+    const yearArr = [null].concat(Array.from({length: 110}, (_, i) => nowYear - i));
+    const monthArr = [null].concat(Array.from({length: 12}, (_, i) => 1+i));
+    const dateArr = [null].concat(Array.from({length: 31}, (_, i) => 1+i));
     this.setState({ yearArr, monthArr, dateArr })
   }
 
-  updateSelect = (e) => {
+  sendDateToJoin = (year, month, date) => {
+    const zeroCheck = year * month * date;
+    const { updateBirth } = this.props;
+    if (zeroCheck) {
+      updateBirth(year, month-1, date);
+    }
+  }
+
+  changeDate = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value })
+    const { year, month, date } = this.state;
+    const { sendDateToJoin } = this;
+    this.setState({ 
+      [name]: value 
+    }, () => sendDateToJoin(year, month, date));
   }
 
   render() {
     const { yearArr, monthArr, dateArr } = this.state;
-    const { updateSelect } = this;
+    const { changeDate } = this;
     return (
       <>
         <p className="birth-title">생일 축하합니다!!</p>
@@ -54,13 +61,13 @@ export default class SelectBirth extends Component {
               </th>
               <td>
                 <div className="select-wrap">
-                  <select name="year" onChange={updateSelect}>
+                  <select name="year" onChange={changeDate}>
                     {yearArr.map(year => <option value={year}>{year}년</option>)}
                   </select>
-                  <select name="month" onChange={updateSelect}>
+                  <select name="month" onChange={changeDate}>
                     {monthArr.map(month => <option value={month}>{month}월</option>)}
                   </select>
-                  <select name="date" onChange={updateSelect}>
+                  <select name="date" onChange={changeDate}>
                     {dateArr.map(date => <option value={date}>{date}일</option>)}
                   </select>
                 </div>
