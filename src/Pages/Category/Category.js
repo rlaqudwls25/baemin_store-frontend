@@ -18,7 +18,6 @@ class Category extends Component {
       itemList: ItemList
     });
   }
-
   render() { 
     const {itemList} = this.state;
 
