@@ -13,7 +13,7 @@ class Detail extends Component {
 
 
   countUp = () => {
-    const {price, count} = this.state;
+    const { count } = this.state;
     this.setState({
       count: count + 1,
     }
@@ -21,15 +21,15 @@ class Detail extends Component {
   }
 
   countDown = () => {
-    const {price, count} = this.state;
+    const { count } = this.state;
     this.setState({
       count: count === 1 ? count: count-1,
     })
   }
 
-  
+
   render() {
-    const {price, count} = this.state;
+    const { price, count } = this.state;
 
     return (
       <div className="Detail">
@@ -87,9 +87,7 @@ class Detail extends Component {
                     </td>
                     <td className="item_choice_price">
                       
-                      <strong 
-                      value={price}
-                      />원
+                      <strong>{count * price}</strong>원
                       
                     </td>
                   </tr>
@@ -99,7 +97,7 @@ class Detail extends Component {
             <div className="item_total_box">
               <span>총 합계금액</span>
               <div>
-                <strong>13,860원</strong>
+              <strong>{count * price}</strong>원
               </div>
             </div>
             <div className="btn_choice_box">
