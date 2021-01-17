@@ -26,7 +26,7 @@ export default class Main extends Component {
   }
 
   render() {
-    const { hotList, newList, saleList } = this.state;
+    const { hotList, newList, recommendList, saleList } = this.state;
     return (
       <main className="main">
         <Carousel />
@@ -46,7 +46,7 @@ export default class Main extends Component {
           <section className="recommend-container">
             <h3>선물하기 딱 좋아요!</h3>
             <div className="recommend-wrap">
-              {RecommendList.map(recommend => <Recommend {...recommend} />)}
+              {recommendList.map(recommend => <Recommend {...recommend} />)}
             </div>
           </section>
           <section className="sale-container">
