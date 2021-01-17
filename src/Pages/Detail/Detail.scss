@@ -1,6 +1,6 @@
 @import '../../Styles/common.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
 
 .content{
   padding: 40px 0 0 0;
@@ -147,9 +147,10 @@
     justify-content: flex-end;
   }
   .btn_add_wish{
-    width: 52px;
+    width: 56px;
     background: url(https://store.baemin.com/data/skin/front/udweb_C/img/custom/zzim_heart@3x.png);
-    background-size: 50px 50px;
+    background-size: 25px 25px;
+    background-position: center;
     background-repeat: no-repeat;
     border: 1px solid $gray1;
   }
@@ -166,6 +167,115 @@
     background: #000;
     color: #ccc;
   }
+}
+
+.item_goods_tab{
+  padding: 80px 0px 0px 0px;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+.item_goods_tab ul{
+  display: flex;
+  justify-content: space-evenly;
+  width: 870px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 16px 0 0 0;
+}
+
+.item_goods_tab li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 174px;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-bottom: 1px solid #ffffff;
+  color: $bm-black;
+}
+
+.item_goods_tab .on{
+  font-weight: bold;
+}
+
+.item_goods_tab a{
+  color: $bm-black;
+}
+
+.detail_cont{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.detail_cont h3{
+  padding: 45px 0px 10px 10px;
+}
+
+.detail_explain_box{
+  height: 400px;
+}
+
+// .detail_info{
+  
+// }
+
+.table_type{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table_type th{
+  padding: 10px 10px 10px 14px;
+  border: 1px solid #dbdbdb;
+  background: #f9f9f9;
+  width: 20%;
+  text-align: left;
+}
+
+.table_type td{
+  width: 80%;
+  padding: 10px 10px 10px 18px;
+  border: 1px solid #dbdbdb;
+  height: 31px;
+}
+
+.table_type tr{
+ height: 60px;
+}
+
+.admin_msg{
+  line-height: 2;
+}
+
+.detail_info h3{
+  font-size: 20px;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.review_table{
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  border-top: 1px solid #999999;
+  text-align: center;
+}
+
+.review_table td{
+  padding: 13px 10px 15px 18px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.review_table a{
+  color: #000;
+}
+
+.review_table span{
+  display: block;
+  background-size: 90px 15px;
+  background: url(https://store.baemin.com/data/skin/front/udweb_C/img/custom/icon_star_fill_new@3x.png);
+
 }
 
 
