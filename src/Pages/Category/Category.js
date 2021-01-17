@@ -36,7 +36,7 @@ class Category extends Component {
                 <li>높은가격순</li>
               </ul>
             </div>
-          </div>   
+          </div>
           <div className="goods_list_item">
             <ul>
               {itemList.map((item => {
