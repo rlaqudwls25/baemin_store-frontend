@@ -1,7 +1,7 @@
 import React, { Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import Item from '../../Components/Item/Item';
-import ItemList from '../../Data/Data';
+// import ItemList from '../../Data/Data';
 import '../../Styles/reset.scss';
 import '../Category/Category.scss';
 
@@ -9,18 +9,29 @@ class Category extends Component {
   constructor(props){
     super(props);
     this.state = {
-      itemList : []
+      itemList : [],
+      nowItemList : [],
+      CategoryId : 0,
     }
   }
 
   componentDidMount() {
-    this.setState({
-      itemList: ItemList
-    });
+    fetch(`http://192.168.219.121:8000/product/product_list/0` , {
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+      const { RESULT } = data;
+      console.log(data);
+      this.setState({
+        itemList: data.RESULT,
+        nowItemList: RESULT[this.state.CategoryId],
+      });
+    })
   }
-  render() { 
-    const {itemList} = this.state;
 
+  render() { 
+    const { nowItemList } = this.state;
     return (
       <Fragment>
       <section className="category">
@@ -39,14 +50,14 @@ class Category extends Component {
           </div>
           <div className="goods_list_item">
             <ul>
-              {itemList.map((item => {
+              {nowItemList.map((item => {
                 return (
                 <Item
-                  url={item.url}
-                  sale={item.sale}
-                  title={item.item}
+                  main_image={item.main_image}
+                  name={item.name}
+                  money_replace={item.money_replace}
                   price={item.price}
-                  itemId={item.itemId}
+                  // itemId={item.itemId}
                 />
                 )
               }))}
