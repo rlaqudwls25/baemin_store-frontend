@@ -10,7 +10,7 @@ export default class Navbar extends Component {
     super(props);
     this.state = {
       isSearchOn: false,
-      focusdMenu: '',
+      focusdMenu: -1,
     }
   }
 
@@ -62,12 +62,12 @@ export default class Navbar extends Component {
         <footer className="nav-footer">
           <ul>
             {FOOTERMENUS.map((menu) => {
-              const { key, content, link} = menu;
+              const { id, key, content, link} = menu;
               return(
                 <li 
                   key={key} 
-                  className={focusdMenu === key && 'focus'}
-                  onClick={() => updateFocus(key)}
+                  className={focusdMenu === id && 'focus'}
+                  onClick={() => updateFocus(id)}
                 >
                   <Link to={link}>{content}</Link>
                 </li>  
