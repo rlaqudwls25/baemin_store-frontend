@@ -18,14 +18,14 @@ export default class Navbar extends Component {
     this.setState({ isSearchOn: false })
   }
 
-  updateFocus = (key) => {
-    this.setState({ focusdMenu: key })
+  updateFocus = (id) => {
+    this.setState({ focusdMenu: id })
   }
 
   render() {
     const { isSearchOn, focusdMenu } = this.state;
     const { closeModal, updateFocus } = this;
-
+    
     return (
       <nav className="navigation">
         {isSearchOn && <SearchModal closeModal={closeModal} />}
@@ -69,7 +69,7 @@ export default class Navbar extends Component {
                   className={focusdMenu === id && 'focus'}
                   onClick={() => updateFocus(id)}
                 >
-                  <Link to={link}>{content}</Link>
+                  <Link to={`/category/${id}`}>{content}</Link>
                 </li>  
               )}
             )}
