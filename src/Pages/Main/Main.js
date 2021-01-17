@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Carousel from './Components/Carousel/Carousel';
 import Item from '../../Components/Item/Item';
 import Recommend from './Components/Recommend/Recommend';
-import { ItemList } from '../../Data/Data';
+import { ItemList, RecommendList } from '../../Data/Data';
 import './Main.scss';
 
 export default class Main extends Component {
@@ -11,6 +11,7 @@ export default class Main extends Component {
     this.state = {
       hotList: [],
       newList: [],
+      recommendList: [],
       saleList: [],
     }
   }
@@ -19,6 +20,7 @@ export default class Main extends Component {
     this.setState({
       hotList: ItemList.slice(0,4),
       newList: ItemList.slice(4,8),
+      recommendList: RecommendList,
       saleList: ItemList.slice(8,12),
     })
   }
@@ -44,8 +46,7 @@ export default class Main extends Component {
           <section className="recommend-container">
             <h3>선물하기 딱 좋아요!</h3>
             <div className="recommend-wrap">
-              <Recommend />
-              <Recommend />
+              {RecommendList.map(recommend => <Recommend {...recommend} />)}
             </div>
           </section>
           <section className="sale-container">

@@ -3,9 +3,9 @@
 //Slider Image
 export const ImageList = [
   {id: 1, img: '/Images/slider1.png', link: '/'},
-  {id: 2, img: '/Images/slider2.jpg', link: '/'},
-  {id: 3, img: '/Images/slider3.png', link: '/'},
-  {id: 4, img: '/Images/default2.jpg', link: '/'},
+  {id: 2, img: '/Images/slider2.jpg', link: '/image1'},
+  {id: 3, img: '/Images/slider3.png', link: '/image2'},
+  {id: 4, img: '/Images/default2.jpg', link: '/image3'},
 ]
 
 export const ItemList = [
@@ -93,4 +93,21 @@ export const ItemList = [
     item: "USB.이런십육기가",
     price: "60,000원"
   }
+]
+
+export const RecommendList = [
+  {
+    recommendId: 1, 
+    link: '/recommend1',
+    img: '/Images/recommend1.jpg', 
+    title: '스트레스엔 엽기떡볶이!',
+    desc: '엽떡은 순한맛이 진리',
+  },
+  {
+    recommendId: 2, 
+    link: '/recommend2',
+    img: '/Images/recommend2.jpeg', 
+    title: '그래, 결심했어!',
+    desc: '레터링시트지',
+  },
 ]

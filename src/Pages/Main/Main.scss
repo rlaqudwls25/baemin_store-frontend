@@ -7,7 +7,7 @@
   section {
     width: $web-width;
     margin: 0px auto;
-    padding-bottom: 80px;
+    padding: 20px 20px 60px 20px;
 
     h3 {
       padding: 60px 0 20px;
@@ -17,12 +17,10 @@
       @extend %flexAlign;
       justify-content: space-between;
       flex-wrap: wrap;
-
+      
+      .item_cont {
+        padding: 0;
+      }
     }
-  }
-
-  .recommend-container > div {
-    height: auto;
-    border: none;
   }
 }
