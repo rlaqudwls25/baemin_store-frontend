@@ -9,13 +9,19 @@ export default class Footer extends Component {
       <footer className="footer">
         <div className="footer-container">
           <section className="footer-logo">
-            <img alt="logo-footer" src="./Images/logo-footer.png" />
+            <img alt="logo-footer" src="/Images/logo-footer.png" />
           </section>
           <section className="footer-context">
             <ul className="footer-link-list">
-              {FOOTERLINK.map(linkInfo =>
-                <li key={linkInfo.key}><Link href={linkInfo.link}>{linkInfo.desc}</Link></li>
-              )}
+              {
+                FOOTERLINK.map((linkInfo) => 
+                  <li key={linkInfo.key}>
+                    <Link to={linkInfo.link}>
+                      {linkInfo.desc}
+                    </Link>
+                  </li>
+                )
+              }
             </ul>
             <div className="footer-info-row">
               <dl>
