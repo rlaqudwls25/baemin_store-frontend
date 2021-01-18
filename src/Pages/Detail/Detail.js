@@ -11,7 +11,6 @@ class Detail extends Component {
     };
   }
 
-
   countUp = () => {
     const { count } = this.state;
     this.setState({
@@ -26,7 +25,6 @@ class Detail extends Component {
       count: count === 1 ? count: count-1,
     })
   }
-
 
   render() {
     const { price, count } = this.state;
@@ -75,20 +73,16 @@ class Detail extends Component {
                         <button 
                         className="up_goods_cnt"
                         onClick={this.countUp}
-                        
                         />
                         <button 
                         className="down_goods_cnt"
-                        
                         onClick={this.countDown}
                         />
                         </span>
                       </span>
                     </td>
                     <td className="item_choice_price">
-                      
                       <strong>{count * price}</strong>원
-                      
                     </td>
                   </tr>
                 </tbody>
