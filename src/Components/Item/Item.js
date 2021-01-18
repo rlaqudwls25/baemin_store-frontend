@@ -5,11 +5,11 @@ import './Item.scss';
 export default class Item extends Component {
   render() {
 
-    const {itemId, main_image, sale, name, price, money_replace} = this.props;
+    const {main_image, sale, name, price, money_replace} = this.props;
 
     return (
       <div className="Item">
-        <li className="item_list" key={itemId}>
+        <li className="item_list">
           <div className="item_cont">
               <div className="item_photo_box">
                 <Link to="/main">
