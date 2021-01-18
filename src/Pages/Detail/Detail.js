@@ -1,4 +1,5 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import DetailInfo from './DetailInfo';
 import './Detail.scss'
 
@@ -26,6 +27,7 @@ class Detail extends Component {
     })
   }
 
+
   render() {
     const { price, count } = this.state;
 
@@ -34,9 +36,9 @@ class Detail extends Component {
         <section className="content">
           <div className="item_photo_info_sec">
             <div className="item_photo_view_box">
-              <a href="/">
+              <Link to="/category">
                 <img src="https://store.baemin.com/data/goods/20/11/47/327/327_main_077.png" alt="상품 사진"></img>
-              </a>
+              </Link>
             </div>
           <div className="item_info_box">
             <div className="item_detail_tit">
@@ -73,16 +75,20 @@ class Detail extends Component {
                         <button 
                         className="up_goods_cnt"
                         onClick={this.countUp}
+                        
                         />
                         <button 
                         className="down_goods_cnt"
+                        
                         onClick={this.countDown}
                         />
                         </span>
                       </span>
                     </td>
                     <td className="item_choice_price">
+                      
                       <strong>{count * price}</strong>원
+                      
                     </td>
                   </tr>
                 </tbody>
@@ -96,7 +102,7 @@ class Detail extends Component {
             </div>
             <div className="btn_choice_box">
               <div className="btn_box">
-                <button type="button" className="btn_add_wish"></button>
+                <button type="button" className="btn_add_wish" />
                 <button type="button" className="btn_add_cart">장바구니</button>
                 <button type="button" className="btn_add_order">바로구매</button>
               </div>
@@ -194,7 +200,7 @@ class Detail extends Component {
                         <span>dd</span>
                       </td>
                       <td>
-                        <a href="/">배민 일력</a>
+                        <Link to="/">배민 일력</Link>
                       </td>
                       <td>qudwls****</td>
                       <td>2020.12.27</td>
@@ -204,7 +210,7 @@ class Detail extends Component {
                         <span>dd</span>
                       </td>
                       <td>
-                        <a href="/">배민 일력</a>
+                        <Link to="/">배민 일력</Link>
                       </td>
                       <td>qudwls****</td>
                       <td>2020.12.27</td>
@@ -214,7 +220,7 @@ class Detail extends Component {
                         <span>dd</span>
                       </td>
                       <td>
-                        <a href="/">배민 일력</a>
+                        <Link to="/">배민 일력</Link>
                       </td>
                       <td>qudwls****</td>
                       <td>2020.12.27</td>
@@ -224,7 +230,7 @@ class Detail extends Component {
                         <span></span>
                       </td>
                       <td>
-                        <a href="/">배민 일력</a>
+                        <Link to="/">배민 일력</Link>
                       </td>
                       <td>qudwls****</td>
                       <td>2020.12.27</td>
@@ -234,7 +240,7 @@ class Detail extends Component {
                         <span>dd</span>
                       </td>
                       <td>
-                        <a href="/">배민 일력</a>
+                        <Link to="/">배민 일력</Link>
                       </td>
                       <td>qudwls****</td>
                       <td>2020.12.27</td>
@@ -244,7 +250,7 @@ class Detail extends Component {
                         <span>dd</span>
                       </td>
                       <td>
-                        <a href="/">배민 일력</a>
+                        <Link to="/">배민 일력</Link>
                       </td>
                       <td>qudwls****</td>
                       <td>2020.12.27</td>
