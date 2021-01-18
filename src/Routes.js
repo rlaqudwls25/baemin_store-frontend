@@ -6,6 +6,10 @@ import Main from "./Pages/Main/Main";
 import Login from "./Pages/Login/Login";
 import Category from "./Pages/Category/Category";
 import Item from "./Components/Item/Item";
+import EnterJoin from "./Pages/Register/EnterJoin/EnterJoin";
+import Join from "./Pages/Register/Join/Join";
+import ExitJoin from "./Pages/Register/ExitJoin/ExitJoin";
+import "./Styles/reset.scss";
 
 class Routes extends Component {
   render() {
@@ -15,6 +19,9 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/register/enter_join" component={EnterJoin} />
+          <Route exact path="/register/join" component={Join} />
+          <Route exact path="/register/exit_join" component={ExitJoin} />
           <Route exact path="/category" component={Category} />
           <Route exact path="/item" component={Item} />
         </Switch>

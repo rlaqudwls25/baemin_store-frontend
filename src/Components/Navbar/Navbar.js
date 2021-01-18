@@ -41,7 +41,7 @@ export default class Navbar extends Component {
         <section>
           <div className="nav-section-wrap">
             <a href="/">
-              <img alt="logo-nav" src="./Images/logo-nav.png" /> 
+              <img alt="logo-nav" src="/Images/logo-nav.png" /> 
             </a>
           </div>
         </section>
