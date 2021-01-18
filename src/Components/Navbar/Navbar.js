@@ -49,7 +49,7 @@ export default class Navbar extends Component {
         <section className="nav-body">
           <div className="nav-section-wrap">
             <a href="/">
-              <img alt="logo-nav" src="./Images/logo-nav.png" /> 
+              <img alt="logo-nav" src="/Images/logo-nav.png" /> 
             </a>
             <div className="search-bar">
               <input type="text" placeholder="검색" onClick={() => this.setState({ isSearchOn: true })} />
