@@ -4,8 +4,12 @@ import './Item.scss';
 
 export default class Item extends Component {
   render() {
+    
+    //fecth
+    // const {main_image, sale, name, price, money_replace} = this.props;
 
-    const {main_image, sale, name, price, money_replace} = this.props;
+    //mock data
+    const {url, sale, item, price} = this.props;
 
     return (
       <div className="Item">
@@ -13,7 +17,7 @@ export default class Item extends Component {
           <div className="item_cont">
               <div className="item_photo_box">
                 <Link to="/main">
-                  <img src={main_image} alt="아이템" className="img_list"/>
+                  <img src={url} alt="아이템" className="img_list"/>
                 </Link>
               </div>
                 <div className="item_info">
@@ -22,13 +26,13 @@ export default class Item extends Component {
                   </div>
                   <div className="item_tit_box">
                     <Link to="/">
-                      <strong>{name}</strong>
+                      <strong>{item}</strong>
                     </Link>
                   </div>
                   <div className="item_money_box">
-                      <span className="money_sale_line">{money_replace}</span>
+                      <span className="money_sale_line">{price}</span>
                       <strong>
-                      <span className="finally_money">{Math.round(price)}</span>
+                      <span className="finally_money">13,000원</span>
                       </strong>
                   </div>
                 </div>
