@@ -18,7 +18,7 @@ class Routes extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Main} />
-  
+          
   
         </Switch>
         <Footer />
