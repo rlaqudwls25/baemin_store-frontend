@@ -1,0 +1,66 @@
+@import '../../../../Styles/common.scss';
+
+.cart-item {
+  @extend %flexBetween;
+  width: 80%;
+  margin: 5px 0;
+  padding: 10px;
+  border-top: 1px solid $bm-black;
+  border-bottom: 1px solid $bm-black;
+  color: $bm-black;
+
+  .cart-item-left {
+    @extend %flexAlign;
+    width: 80%;
+
+    input {
+      width: 3%;
+    }
+
+    img {
+      width: 80px;
+      object-fit: cover;
+      margin: 0 10px;
+    }
+
+    .cart-item-name {
+      width: 97%;
+
+      button {
+        margin-bottom: 5px;
+        padding: 3px;
+        background: #000000;
+        color: #ffffff;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .cart-item-right {
+    @extend %flexAlign;
+    justify-content: flex-end;
+    width: 20%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+
+    .cart-item-counter {
+      width: 70%;
+
+      .cart-item-count {
+        margin-bottom: 5px;
+      }
+
+      button {
+        padding: 3px 5px;
+        background: #ffffff;
+        border: 1px solid $gray1;
+        font-size: 10px;
+      }
+    }
+
+    .cart-item-price {
+      width: 30%;
+    }
+  }
+}
