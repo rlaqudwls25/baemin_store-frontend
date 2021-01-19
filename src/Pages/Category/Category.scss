@@ -77,7 +77,7 @@
   & ul{
     display: flex;
     font-size: 15px;
-    & li{
+    & button{
       padding: 0px 15px;
       font-family: 'Nanum Gothic', sans-serif;
     }
@@ -85,11 +85,6 @@
       font-weight: bold;
       font-family: 'Nanum Gothic', sans-serif;
     }
-  }
-  & li{
-    padding: 0px 15px;
-    font-family: 'Nanum Gothic', sans-serif;
-    cursor: pointer;
   }
 }
 

@@ -1,19 +1,34 @@
 import React, { Component, Fragment} from 'react';
-import { Link } from 'react-router-dom';
 import Item from '../../Components/Item/Item';
+import Buttons from './Buttons';
 import ItemList from '../../Data/Data';
 import '../../Styles/reset.scss';
 import '../Category/Category.scss';
+
+
 
 class Category extends Component {
   constructor(props){
     super(props);
     this.state = {
+      pager: {},
       product : [],
+      currentIdx: 1,
+      page: 1,
+      start: 0,
+      end: 4,
       // nowItemList : [],
       // CategoryId : 0,
     }
   }
+  
+
+  // indexOfLast = 페이지의 마지막 인덱스
+  // indexOfFirst = 페이지의 첫 번째 인덱스
+  // postsPerPage = 데이터 등분
+  // currentPage = 현재 페이지
+  // currentPost = 현재 포스트 페이지
+  // 처음과 끝 인덱스 번호를 구한 다음 currentPosts 함수를 통해 100개의 배열 데이터를 slice 함수로 분할
 
   // 백 mapping
   // componentDidMount() {
@@ -33,13 +48,46 @@ class Category extends Component {
 
   //Mock data
   componentDidMount() {
+    //페이징
+    fetch(``)
+    .then((res) => res.json())
+    .then((res) => this.setState({ }))
     this.setState({
       product: ItemList,
     })
   }
 
+  fetchCategory = (e) => {
+    const LIMIT = 12;
+    const offset = e.target.dataset.idx;
+
+    fetch(``)
+  }
+
+  changeIndexUp = () => {
+    const { page, start, end } = this.state;
+    this.setState({
+      page: page + 1,
+      end: end + 4,
+      start: start + 4
+    })
+  }
+
+  changeIndexDown = () => {
+    const { page, start, end } = this.state;
+    if(start === 0) {
+      return;
+    }
+    this.setState({
+      page: page - 1,
+      end: end - 4,
+      start: start - 4
+    })
+
+  }
   render() { 
-    const { nowItemList , product } = this.state;
+    const { nowItemList , product, currentIdx } = this.state;
+    const { fetchCategory } = this;
     return (
       <Fragment>
       <section className="category">
@@ -78,10 +126,10 @@ class Category extends Component {
           </div>
           <div className="pagination">
             <ul>
-              <li className="page_one"><Link to=""/>1</li>
-              <li><Link to=""/>2</li>
-              <li><Link to=""/>3</li>
-              <li><Link to=""/>4</li>
+              <Buttons 
+              currentIdx={currentIdx}
+              fetchCategory={fetchCategory}
+              />
             </ul>
           </div>
           </div>
