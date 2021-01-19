@@ -9,6 +9,7 @@ class Detail extends Component {
     this.state = {
       count : 1,
       price: 13000
+      
     };
   }
 
@@ -27,17 +28,26 @@ class Detail extends Component {
     })
   }
 
+  scrollBtn = (e) => {
+    const btnArr = document.querySelectorAll(".link");
+    for(let i= 0; i<btnArr.length; i++) {
+      e.preventDefault();
+      document.querySelector('.info' + (i+1)).scrollIntoView(true);
+    }
+  }
 
   render() {
     const { price, count } = this.state;
+
+    console.log("btn", this.scrollBtn);
 
     return (
       <div className="Detail">
         <section className="content">
           <div className="item_photo_info_sec">
             <div className="item_photo_view_box">
-              <Link to="/category">
-                <img src="https://store.baemin.com/data/goods/20/11/47/327/327_main_077.png" alt="상품 사진"></img>
+              <Link to="/">
+                <img src="./Images/listitem.png" alt="상품 사진"></img>
               </Link>
             </div>
           <div className="item_info_box">
@@ -75,20 +85,16 @@ class Detail extends Component {
                         <button 
                         className="up_goods_cnt"
                         onClick={this.countUp}
-                        
                         />
                         <button 
-                        className="down_goods_cnt"
-                        
+                        className="down_goods_cnt"                   
                         onClick={this.countDown}
                         />
                         </span>
                       </span>
                     </td>
                     <td className="item_choice_price">
-                      
                       <strong>{count * price}</strong>원
-                      
                     </td>
                   </tr>
                 </tbody>
@@ -109,12 +115,14 @@ class Detail extends Component {
             </div>
           </div>
           </div>
-          <DetailInfo />
+          <DetailInfo
+          onClick={this.scrollBtn}
+          />
           <div className="detail_cont">
-            <h3>상품상세정보</h3>
+            <h3 className="info">상품상세정보</h3>
             <div className="detail_explain_box">
               <img src="./Images/detail.png" alt="상품 설명사진" />
-              <h3>상품필수 정보</h3>
+              <h3 className="info">상품필수 정보</h3>
               <div className="detail_table">
                 <table className="table_type">
                   <tbody>
@@ -163,7 +171,7 @@ class Detail extends Component {
               </div>
               <div className="detail_info">
               <DetailInfo />
-                <h3>배송안내</h3>
+                <h3 className="info">배송안내</h3>
                 <div className="admin_msg">
                   <p>배송사:cj대한통운</p>
                   <p>배송비: 2,500원(3만원 이상 구매 시 무료배송)</p>
@@ -173,7 +181,7 @@ class Detail extends Component {
                 </div>
               <DetailInfo />
               <div className="admin_msg">
-                <h3>교환 및 반품안내</h3>
+                <h3 className="info">교환 및 반품안내</h3>
                 <p>주문 취소 및 배송지 변경은 "결제완료" 단계에서만 가능합니다.</p>
                 <p>마이페이지에서 취소 또는 변경하실 수 있습니다.</p>
                 <p>"상품준비중" 단계에서는 주문 취소 및 배송지 변경이 불가합니다.</p>
@@ -192,7 +200,7 @@ class Detail extends Component {
               </div>
               <DetailInfo />
               <div>
-                <h3>상품후기</h3>
+                <h3 className="info">상품후기</h3>
                 <table className="review_table">
                   <tbody>
                     <tr>
