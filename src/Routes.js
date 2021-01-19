@@ -18,12 +18,8 @@ class Routes extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Main} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register/enter_join" component={EnterJoin} />
-          <Route exact path="/register/join" component={Join} />
-          <Route exact path="/register/exit_join" component={ExitJoin} />
-          <Route exact path="/category" component={Category} />
-          <Route exact path="/item" component={Item} />
+  
+  
         </Switch>
         <Footer />
       </Router>
