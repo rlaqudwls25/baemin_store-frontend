@@ -9,7 +9,7 @@ class Category extends Component {
   constructor(props){
     super(props);
     this.state = {
-      itemList : [],
+      product : [],
       // nowItemList : [],
       // CategoryId : 0,
     }
@@ -34,12 +34,12 @@ class Category extends Component {
   //Mock data
   componentDidMount() {
     this.setState({
-      itemList: ItemList,
+      product: ItemList,
     })
   }
 
   render() { 
-    const { nowItemList , itemList, url, sale, item, price } = this.state;
+    const { nowItemList , product } = this.state;
     return (
       <Fragment>
       <section className="category">
@@ -58,7 +58,7 @@ class Category extends Component {
           </div>
           <div className="goods_list_item">
             <ul>
-              {itemList.map((item => {   //nowItemList
+              {product.map((product => {   //nowItemList
                 return (
                 <Item
                   // main_image={item.main_image}
@@ -66,10 +66,11 @@ class Category extends Component {
                   // money_replace={item.money_replace}
                   // price={item.price}
                   // itemId={item.itemId}
-                  url = {item.url}
-                  sale = {item.sale}
-                  item = {item.item}
-                  price = {item.price}
+                  itemId = {product.itemId}
+                  url = {product.url}
+                  sale = {product.sale}
+                  item = {product.item}
+                  price = {product.price}
                 />
                 )
               }))}

@@ -9,11 +9,11 @@ export default class Item extends Component {
     // const {main_image, sale, name, price, money_replace} = this.props;
 
     //mock data
-    const {url, sale, item, price} = this.props;
+    const {itemId, url, sale, item, price} = this.props;
 
     return (
       <div className="Item">
-        <li className="item_list">
+        <li className="item_list" key={itemId}>
           <div className="item_cont">
               <div className="item_photo_box">
                 <Link to="/main">
