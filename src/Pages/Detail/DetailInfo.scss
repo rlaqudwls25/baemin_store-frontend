@@ -1,0 +1,31 @@
+@import '../../Styles/common.scss';
+
+.item_goods_tab{
+  padding: 80px 0px 0px 0px;
+  border-bottom: 1px solid #bbbbbb;
+  & ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 870px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 16px 0 0 0;
+  }
+  & li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 174px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #ffffff;
+    color: $bm-black;
+  }
+  .on{
+    font-weight: bold;
+  }
+  & a{
+    color: $bm-black;
+  }
+}

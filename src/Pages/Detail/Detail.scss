@@ -171,76 +171,37 @@
   }
 }
 
-.item_goods_tab{
-  padding: 80px 0px 0px 0px;
-  border-bottom: 1px solid #bbbbbb;
-}
-
-.item_goods_tab ul{
-  display: flex;
-  justify-content: space-evenly;
-  width: 870px;
-  height: 60px;
-  margin: 0 auto;
-  padding: 16px 0 0 0;
-}
-
-.item_goods_tab li{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 174px;
-  font-size: 12px;
-  text-align: center;
-  border: 1px solid #ddd;
-  border-bottom: 1px solid #ffffff;
-  color: $bm-black;
-}
-
-.item_goods_tab .on{
-  font-weight: bold;
-}
-
-.item_goods_tab a{
-  color: $bm-black;
-}
 
 .detail_cont{
   width: 900px;
   margin: 0 auto;
-}
-
-.detail_cont h3{
-  padding: 45px 0px 10px 10px;
-}
-
-.detail_explain_box{
-  height: 400px;
-}
-
-.table_type{
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-}
-
-.table_type th{
-  padding: 10px 10px 10px 14px;
-  border: 1px solid #dbdbdb;
-  background: #f9f9f9;
-  width: 20%;
-  text-align: left;
-}
-
-.table_type td{
-  width: 80%;
-  padding: 10px 10px 10px 18px;
-  border: 1px solid #dbdbdb;
-  height: 31px;
-}
-
-.table_type tr{
-  height: 60px;
+  & h3{
+    padding: 45px 0px 10px 10px;
+  }
+  .detail_explain_box{
+    height: 400px;
+    .table_type{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      & th{
+        padding: 10px 10px 10px 14px;
+        border: 1px solid #dbdbdb;
+        background: #f9f9f9;
+        width: 20%;
+        text-align: left;
+      }
+      & td{
+        width: 80%;
+        padding: 10px 10px 10px 18px;
+        border: 1px solid #dbdbdb;
+        height: 31px;
+      }
+      & tr{
+        height: 60px;
+      }
+    }
+  }
 }
 
 .admin_msg{
@@ -258,26 +219,20 @@
   border-collapse: collapse;
   border-top: 1px solid #999999;
   text-align: center;
+  & td{
+    padding: 13px 10px 15px 18px;
+    border-bottom: 1px solid #dbdbdb;
+  }
+  & a{
+    color: $bm-black;
+  }
+  & span{
+    display: block;
+    width: 88px;
+    background-repeat: round;
+    text-indent: -9999px;
+    background: url(https://store.baemin.com/data/skin/front/udweb_C/img/custom/icon_star_fill_new@3x.png);
+    background-size: 90px;
+  }
 }
-
-.review_table td{
-  padding: 13px 10px 15px 18px;
-  border-bottom: 1px solid #dbdbdb;
 }
-
-.review_table a{
-  color: #000;
-}
-
-.review_table span{
-  display: block;
-  background-size: 90px 15px;
-  background: url(https://store.baemin.com/data/skin/front/udweb_C/img/custom/icon_star_fill_new@3x.png);
-
-}
-}
-
-
-
-
-

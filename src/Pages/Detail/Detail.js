@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import DetailInfo from './DetailInfo';
 import './Detail.scss'
+import './DetailInfo.scss'
 
 class Detail extends Component {
   constructor(props){
@@ -36,9 +37,9 @@ class Detail extends Component {
     }
   }
 
+
   render() {
     const { price, count } = this.state;
-
     console.log("btn", this.scrollBtn);
 
     return (
@@ -83,10 +84,12 @@ class Detail extends Component {
                         />
                         <span>
                         <button 
+                        id="up"
                         className="up_goods_cnt"
                         onClick={this.countUp}
                         />
-                        <button 
+                        <button
+                        id="down" 
                         className="down_goods_cnt"                   
                         onClick={this.countDown}
                         />
