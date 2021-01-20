@@ -1,1 +1,26 @@
-@import '../../Styles/common.scss'
+@import '../../Styles/common.scss';
+
+.main {
+  margin-top: 200px;
+  margin-bottom: 150px;
+
+  section {
+    width: $web-width;
+    margin: 0px auto;
+    padding: 20px 20px 60px 20px;
+
+    h3 {
+      padding: 60px 0 20px;
+      font-size: 26px;
+    }
+    .hot-wrap, .new-wrap, .sale-wrap {
+      @extend %flexAlign;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+      .item_cont {
+        padding: 0;
+      }
+    }
+  }
+}

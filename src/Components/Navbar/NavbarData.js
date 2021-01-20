@@ -30,7 +30,7 @@ export const FOOTERMENUS = [
     id: 0,
     key: 'all',
     content: '전체',
-    link: '/',
+    link: '/category',
   },
   {
     id: 1,

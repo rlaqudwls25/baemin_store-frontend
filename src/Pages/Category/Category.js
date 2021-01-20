@@ -1,7 +1,7 @@
 import React, { Component, Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import Item from '../../Components/Item/Item';
-import ItemList from '../../Data/Data';
+import { ItemList } from '../../Data/Data';
 import '../../Styles/reset.scss';
 import '../Category/Category.scss';
 
@@ -18,7 +18,6 @@ class Category extends Component {
       itemList: ItemList
     });
   }
-
   render() { 
     const {itemList} = this.state;
 

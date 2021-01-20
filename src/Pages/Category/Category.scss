@@ -1,7 +1,11 @@
 @import '../../Styles/common.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,300&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,300&display=swap');
 
 .category{
-  margin-top: 200px;
+  margin-top: 240px;
   .content{
     position: relative;
     width: 1100px;
@@ -76,7 +80,6 @@
   }
 }
 
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -95,6 +98,14 @@
       font-family: 'Nanum Gothic', sans-serif;
     }
   }
+<<<<<<< HEAD
+=======
+  & li{
+    padding: 0px 15px;
+    font-family: 'Nanum Gothic', sans-serif;
+    cursor: pointer;
+  }
+>>>>>>> main
 }
 
 
