@@ -1,27 +1,35 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { HEADERMENUS, FOOTERMENUS } from './NavbarData'
+import SearchModal from './Components/SearchModal/SearchModal'
+import { HEADERMENUS, FOOTERMENUS } from './NavbarData';
+import { SearchSVG } from '../../Data/Config';
 import './Navbar.scss'
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      focusdMenu: '',
+      isSearchOn: false,
+      focusdMenu: -1,
     }
   }
 
-  updateFocus = (key) => {
-    this.setState({ focusdMenu: key })
+  closeModal = () => {
+    this.setState({ isSearchOn: false })
+  }
+
+  updateFocus = (id) => {
+    this.setState({ focusdMenu: id })
   }
 
   render() {
-    const { focusdMenu } = this.state;
-    const { updateFocus } = this;
-
+    const { isSearchOn, focusdMenu } = this.state;
+    const { closeModal, updateFocus } = this;
+    
     return (
       <nav className="navigation">
-        <header>
+        {isSearchOn && <SearchModal closeModal={closeModal} />}
+        <header className="nav-header">
           <div className="nav-header-wrap">
             <ul>
               {HEADERMENUS.map((menu) => {
@@ -38,24 +46,30 @@ export default class Navbar extends Component {
             </ul>
           </div>
         </header>
-        <section>
+        <section className="nav-body">
           <div className="nav-section-wrap">
             <a href="/">
               <img alt="logo-nav" src="/Images/logo-nav.png" /> 
             </a>
+            <div className="search-bar">
+              <input type="text" placeholder="검색" onClick={() => this.setState({ isSearchOn: true })} />
+              <svg aria-hidden="true" data-icon="search" role="img" viewBox="0 0 512 512" class="search-icon">
+                {SearchSVG}
+              </svg>
+            </div>
           </div>
         </section>
-        <footer>
+        <footer className="nav-footer">
           <ul>
             {FOOTERMENUS.map((menu) => {
-              const { key, content, link} = menu;
+              const { id, key, content, link} = menu;
               return(
                 <li 
                   key={key} 
-                  className={focusdMenu === key && 'focus'}
-                  onClick={() => updateFocus(key)}
+                  className={focusdMenu === id && 'focus'}
+                  onClick={() => updateFocus(id)}
                 >
-                  <Link to={link}>{content}</Link>
+                  <Link to={`/category/${id}`}>{content}</Link>
                 </li>  
               )}
             )}
