@@ -23,7 +23,6 @@ class Routes extends Component {
           <Route exact path="/register/join" component={Join} />
           <Route exact path="/register/exit_join" component={ExitJoin} />
           <Route exact path="/category" component={Category} />
-          <Route exact path="/category/detail" component={Category} />
           <Route exact path="/item" component={Item} />
         </Switch>
         <Footer />

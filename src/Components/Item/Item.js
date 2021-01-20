@@ -8,8 +8,6 @@ export default class Item extends Component {
     this.stats.history.push("/category/detail");
   }
 
-
-
   render() {
     
     //fecth
