@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import './Item.scss';
 
 export default class Item extends Component {
+  
+  goToDetail = () => {
+    this.stats.history.push("/category/detail");
+  }
+
+
+
   render() {
     
     //fecth
@@ -11,8 +18,9 @@ export default class Item extends Component {
     //mock data
     const {itemId, url, sale, item, price} = this.props;
 
+
     return (
-      <div className="Item">
+      <div className="Item" onClick={this.goToDetail}>
         <li className="item_list" key={itemId}>
           <div className="item_cont">
               <div className="item_photo_box">
