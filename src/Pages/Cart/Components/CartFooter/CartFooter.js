@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './CartFooter.scss';
 
 export default class CartFooter extends Component {
   render() {
     return (
-      <div>
+      <footer className="cart-footer">
         hihi
-      </div>
+      </footer>
     )
   }
 }
