@@ -9,7 +9,10 @@ import Item from "./Components/Item/Item";
 import EnterJoin from "./Pages/Register/EnterJoin/EnterJoin";
 import Join from "./Pages/Register/Join/Join";
 import ExitJoin from "./Pages/Register/ExitJoin/ExitJoin";
+<<<<<<< HEAD
 import Detail from "./Pages/Detail/Detail"
+=======
+>>>>>>> main
 import "./Styles/reset.scss";
 
 class Routes extends Component {
@@ -20,6 +23,11 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/" component={Main} />
+<<<<<<< HEAD
+=======
+          
+  
+>>>>>>> main
         </Switch>
         <Footer />
       </Router>
