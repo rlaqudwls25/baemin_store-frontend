@@ -39,7 +39,6 @@ class Detail extends Component {
     }
   }
 
-
   render() {
     const { price, count } = this.state;
     console.log("btn", this.scrollBtn);

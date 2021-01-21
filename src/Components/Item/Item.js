@@ -12,9 +12,11 @@ export default class Item extends Component {
         <li className="item_list" key={itemId}>
           <div className="item_cont">
               <div className="item_photo_box">
+                <div className="photo_center"> 
                   <Link to="/main">
                   <img src={url} alt="아이템" className="img_list"/>
                   </Link>
+                  </div>
               </div>
                 <div className="item_info">
                   <div className="item_info_sale">
