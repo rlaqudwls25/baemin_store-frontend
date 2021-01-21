@@ -12,36 +12,37 @@ export default class Category extends Component {
       pager: {},
       product : [],
       currentIdx: 1,
-      // nowItemList : [],
-      // CategoryId : 0,
+      nowItemList : [],
+      CategoryId : 0,
     }
   }
-  
-  // 백 mapping
-  // componentDidMount() {
-  //   fetch(`http://192.168.219.121:8000/product/product_list/0` , {
-  //     method: 'GET'
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //     const { RESULT } = data;
-  //     // console.log(data);
-  //     this.setState({
-  //       itemList: data.RESULT,
-  //       nowItemList: RESULT[this.state.CategoryId],
-  //     });
-  //   })
-  // }
 
-  //Mock data
+  // 백 mapping
   componentDidMount() {
-    fetch(``)
-    .then((res) => res.json())
-    .then((res) => this.setState({ }))
-    this.setState({
-      product: ItemList,
+    // fetch(`http://10.58.0.114:8000/products/product_list/0/all` , {
+    fetch('/data/product.json' , {  
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+      const { RESULT } = data;
+      console.log(data.RESULT);
+      this.setState({
+        itemList: data.RESULT,
+        nowItemList: RESULT.data,
+      });
     })
   }
+
+  //Mock data
+  // componentDidMount() {
+  //   fetch(``)
+  //   .then((res) => res.json())
+  //   .then((res) => this.setState({ }))
+  //   this.setState({
+  //     product: ItemList,
+  //   })
+  // }
 
   fetchCategory = (e) => {
     const LIMIT = 12;
@@ -71,19 +72,20 @@ export default class Category extends Component {
           </div>
           <div className="goods_list_item">
             <ul>
-              {product.map((product => {   //nowItemList
+              {nowItemList.map((product => {   //nowItemList
                 return (
                 <Item
-                  // main_image={item.main_image}
-                  // name={item.name}
-                  // money_replace={item.money_replace}
-                  // price={item.price}
-                  // itemId={item.itemId}
-                  itemId = {product.itemId}
+                  main_image={product.main_image}
+                  name={product.name}
+                  money_replace={product.money_replace}
+                  price={product.price}
+                  CategoryId={product.CategoryId}
+                  rate={product.rate}
+                  /*itemId = {product.itemId}
                   url = {product.url}
                   sale = {product.sale}
                   item = {product.item}
-                  price = {product.price}
+                  price = {product.price}*/
                 />
                 )
               }))}
