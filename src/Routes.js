@@ -5,7 +5,6 @@ import Footer from "./Components/Footer/Footer";
 import Main from "./Pages/Main/Main";
 import Login from "./Pages/Login/Login";
 import Category from "./Pages/Category/Category";
-import Item from "./Components/Item/Item";
 import EnterJoin from "./Pages/Register/EnterJoin/EnterJoin";
 import Join from "./Pages/Register/Join/Join";
 import ExitJoin from "./Pages/Register/ExitJoin/ExitJoin";
@@ -18,9 +17,13 @@ class Routes extends Component {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/detail" component={Detail} />
           <Route exact path="/" component={Main} />
-          <Route exact path="/category" component={Category} />
+          <Route exact path="/detail" component={Detail} />
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/register/join" component={Join}/>
+          <Route exact path="/register/enter_join" component={EnterJoin}/>
+          <Route exact path="/register/exit_join" component={ExitJoin}/>
+          <Route exact path="/category/:id" component={Category}/>
         </Switch>
         <Footer />
       </Router>
