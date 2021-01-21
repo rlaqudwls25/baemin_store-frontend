@@ -1,0 +1,24 @@
+@import '../../Styles/common.scss';
+
+.review_table{
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  border-top: 1px solid #999999;
+  text-align: center;
+  & td{
+    padding: 13px 10px 15px 18px;
+    border-bottom: 1px solid #dbdbdb;
+  }
+  & a{
+    color: $bm-black;
+  }
+  & span{
+    display: block;
+    width: 88px;
+    background-repeat: round;
+    text-indent: -9999px;
+    background: url(https://store.baemin.com/data/skin/front/udweb_C/img/custom/icon_star_fill_new@3x.png);
+    background-size: 90px;
+  }
+}
