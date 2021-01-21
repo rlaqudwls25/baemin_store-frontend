@@ -1,7 +1,11 @@
 import React, { Component, Fragment} from 'react';
 import Item from '../../Components/Item/Item';
+<<<<<<< HEAD
 import Buttons from './Buttons';
 import ItemList from '../../Data/Data';
+=======
+import { ItemList } from '../../Data/Data';
+>>>>>>> main
 import '../../Styles/reset.scss';
 import '../Category/Category.scss';
 
