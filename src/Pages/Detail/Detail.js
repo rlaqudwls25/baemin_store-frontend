@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import DetailInfo from './DetailInfo';
+import DetailTable from './DetailTable';
+import DetailExact from './DetailExact';
 import './Detail.scss'
 import './DetailInfo.scss'
 
@@ -9,7 +11,7 @@ class Detail extends Component {
     super(props);
     this.state = {
       count : 1,
-      price: 13000
+      price: 3500
       
     };
   }
@@ -125,54 +127,9 @@ class Detail extends Component {
             <h3 className="info">상품상세정보</h3>
             <div className="detail_explain_box">
               <img src="./Images/detail.png" alt="상품 설명사진" />
-              <h3 className="info">상품필수 정보</h3>
-              <div className="detail_table">
-                <table className="table_type">
-                  <tbody>
-                    <tr>
-                      <th>품명</th>
-                      <td>미니언즈X배달의민족. 혼밥식기세트</td>
-                    </tr>
-                    <tr>
-                      <th>재질</th>
-                      <td>도자기</td>
-                    </tr>
-                    <tr>
-                      <th>구성품</th>
-                      <td>밥그릇, 국그릇, 앞접시, 머그컵</td>
-                    </tr>
-                    <tr>
-                      <th>크기</th>
-                      <td>상세페이지 참고</td>
-                    </tr>
-                    <tr>
-                      <th>동일모델의 출시년월</th>
-                      <td>2019년 11월</td>
-                    </tr>
-                    <tr>
-                      <th>제조사</th>
-                      <td>(주)우아한형제들</td>
-                    </tr>
-                    <tr>
-                      <th>제조국</th>
-                      <td>한국</td>
-                    </tr>
-                    <tr>
-                      <th>식품위생법에 따른 수입신고 </th>
-                      <td>해당없음</td>
-                    </tr>
-                    <tr>
-                      <th>품질보증기준</th>
-                      <td>관련 법 및 소비자 분쟁해결 규정에 따름</td>
-                    </tr>
-                    <tr>
-                      <th>A/S 책임자와 전화번호</th>
-                      <td>배민문방구 고객센터 1670-9902</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <DetailExact />
               <div className="detail_info">
+              </div>
               <DetailInfo />
                 <h3 className="info">배송안내</h3>
                 <div className="admin_msg">
@@ -202,78 +159,11 @@ class Detail extends Component {
                 <p>배민문방구에서 발생한 문제는 소비자분쟁해결 기준(공정거래위원회 고시)에 따라 피해를 보상받을 수 있습니다.</p>
               </div>
               <DetailInfo />
-              <div>
-                <h3 className="info">상품후기</h3>
-                <table className="review_table">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <span>dd</span>
-                      </td>
-                      <td>
-                        <Link to="/">배민 일력</Link>
-                      </td>
-                      <td>qudwls****</td>
-                      <td>2020.12.27</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>dd</span>
-                      </td>
-                      <td>
-                        <Link to="/">배민 일력</Link>
-                      </td>
-                      <td>qudwls****</td>
-                      <td>2020.12.27</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>dd</span>
-                      </td>
-                      <td>
-                        <Link to="/">배민 일력</Link>
-                      </td>
-                      <td>qudwls****</td>
-                      <td>2020.12.27</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span></span>
-                      </td>
-                      <td>
-                        <Link to="/">배민 일력</Link>
-                      </td>
-                      <td>qudwls****</td>
-                      <td>2020.12.27</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>dd</span>
-                      </td>
-                      <td>
-                        <Link to="/">배민 일력</Link>
-                      </td>
-                      <td>qudwls****</td>
-                      <td>2020.12.27</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span>dd</span>
-                      </td>
-                      <td>
-                        <Link to="/">배민 일력</Link>
-                      </td>
-                      <td>qudwls****</td>
-                      <td>2020.12.27</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <DetailTable />
               <DetailInfo />
-              <div>
+              <div className="product_ask">
                 <h3>상품문의</h3>
               </div>
-            </div>
             </div>
           </div>
         </section>

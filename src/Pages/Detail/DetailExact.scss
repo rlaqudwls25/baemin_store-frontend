@@ -1,0 +1,9 @@
+@import '../../Styles/common.scss';
+
+.detail_cont{
+  width: 900px;
+  margin: 0 auto;
+  & h3{
+    padding: 45px 0px 10px 10px;
+  }
+}

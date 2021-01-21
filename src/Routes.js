@@ -20,9 +20,6 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/detail" component={Detail} />
           <Route exact path="/" component={Main} />
-          
-          
-  
         </Switch>
         <Footer />
       </Router>
