@@ -1,17 +1,11 @@
 import React, { Component, Fragment} from 'react';
 import Item from '../../Components/Item/Item';
-<<<<<<< HEAD
 import Buttons from './Buttons';
-import ItemList from '../../Data/Data';
-=======
-import { ItemList } from '../../Data/Data';
->>>>>>> main
+import {ItemList} from '../../Data/Data';
 import '../../Styles/reset.scss';
 import '../Category/Category.scss';
 
-
-
-class Category extends Component {
+export default class Category extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -26,7 +20,6 @@ class Category extends Component {
     }
   }
   
-
   // indexOfLast = 페이지의 마지막 인덱스
   // indexOfFirst = 페이지의 첫 번째 인덱스
   // postsPerPage = 데이터 등분
@@ -130,7 +123,7 @@ class Category extends Component {
           </div>
           <div className="pagination">
             <ul>
-              <Buttons 
+              <Buttons
               currentIdx={currentIdx}
               fetchCategory={fetchCategory}
               />
@@ -142,5 +135,3 @@ class Category extends Component {
     );
   }
 }
-
-export default Category;

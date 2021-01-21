@@ -9,6 +9,7 @@ import Item from "./Components/Item/Item";
 import EnterJoin from "./Pages/Register/EnterJoin/EnterJoin";
 import Join from "./Pages/Register/Join/Join";
 import ExitJoin from "./Pages/Register/ExitJoin/ExitJoin";
+import Detail from "./Pages/Detail/Detail"
 import "./Styles/reset.scss";
 
 class Routes extends Component {
@@ -17,9 +18,9 @@ class Routes extends Component {
       <Router>
         <Navbar />
         <Switch>
+          <Route exact path="/detail" component={Detail} />
           <Route exact path="/" component={Main} />
-          
-  
+          <Route exact path="/category" component={Category} />
         </Switch>
         <Footer />
       </Router>
