@@ -17,7 +17,6 @@ export default class Category extends Component {
     }
   }
   
-
   // 백 mapping
   // componentDidMount() {
   //   fetch(`http://192.168.219.121:8000/product/product_list/0` , {
