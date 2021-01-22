@@ -126,7 +126,9 @@ class Detail extends Component {
           <div className="detail_cont">
             <h3 className="info">상품상세정보</h3>
             <div className="detail_explain_box">
+              <div className="detail_photo_box">
               <img src="./Images/detail.png" alt="상품 설명사진" />
+              </div>
               <DetailExact />
               <div className="detail_info">
               </div>

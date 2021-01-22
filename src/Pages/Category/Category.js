@@ -4,6 +4,7 @@ import Buttons from './Buttons';
 import {ItemList} from '../../Data/Data';
 import '../../Styles/reset.scss';
 import '../Category/Category.scss';
+import '../../Components/Item/Item';
 
 export default class Category extends Component {
   constructor(props){
@@ -29,7 +30,7 @@ export default class Category extends Component {
       console.log(data.RESULT);
       this.setState({
         itemList: data.RESULT,
-        nowItemList: RESULT.data,
+        nowItemList: RESULT[0],
       });
     })
   }
@@ -72,7 +73,7 @@ export default class Category extends Component {
           </div>
           <div className="goods_list_item">
             <ul>
-              {nowItemList.map((product => {   //nowItemList
+              {nowItemList?.map((product => {   //nowItemList
                 return (
                 <Item
                   main_image={product.main_image}

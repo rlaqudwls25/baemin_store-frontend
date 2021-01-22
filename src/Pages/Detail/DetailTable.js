@@ -41,7 +41,7 @@ class DetailTable extends Component {
         </tr>
         <tr>
           <td>
-            <span></span>
+            <span>dd</span>
           </td>
           <td>
             <Link to="/">배민 일력</Link>

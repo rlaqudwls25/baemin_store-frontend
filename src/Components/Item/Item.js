@@ -10,7 +10,7 @@ export default class Item extends Component {
   render() {
     //fecth
       const {CategoryId, main_image, name, price, money_replace, rate} = this.props;
-      const activePirce = (rate * 100) === 0;
+      
       
     //mock data
     //const {itemId, url, sale, item, price} = this.props;
@@ -23,12 +23,12 @@ export default class Item extends Component {
                   <Link to="/detail">
                   <img src={main_image} alt="아이템" className="img_list"/>
                   </Link>
-              </div>
+                  </div>
                 <div className="item_info">
                   <div className="item_info_sale">
                     <span 
                     className="item_info_sale">
-                      {rate * 100}% 
+                      {Number(rate) !== 0 && `${Number(rate) * 100}%`}
                     </span>
                   </div>
                   <div className="item_tit_box">
@@ -39,7 +39,7 @@ export default class Item extends Component {
                   <div className="item_money_box">
                       <span 
                       className="money_sale_line">
-                      {Number(price)}원
+                      {Number(rate) !== 0 && `${Number(price)}원`}
                       </span>
                       <strong>
                       <span className="finally_money">{Number(price) - price * rate}원</span>
@@ -48,6 +48,7 @@ export default class Item extends Component {
                 </div>
             </div>
         </li>
+        
       </div>
     )
   }
