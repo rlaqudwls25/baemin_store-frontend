@@ -5,11 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,300&display=swap');
 
 .category{
-  margin-top: 240px;
+  margin-top: 200px;
   .content{
     position: relative;
     width: 1100px;
     margin: 0 auto;
+    padding: 60px 0px;
   }
   .goods_pick_list{
     display: flex;
@@ -43,40 +44,14 @@
   }
 }
 
-.item_photo_box{
-  width: 100%;
-}
+
 .goods_list_item{
-  display: flex;
-  justify-content: center;
   padding: 15px 0px;
   width: 100%;
   line-height: 2;
-  .item_photo_box{
-    width: 250px;
-    height: 340px;
-    overflow: hidden;
-    .img_list{
-      width: 100%;
-      height: 100%;
-      //transform:scale(1);
-      transition:.3s;
-      &.img_list:hover{
-      transform:scale(1.2);
-        cursor: pointer;
-      }
-    }
-  }
-  .item_list{
-    display: inline-block;
-    margin: 20px 0px;
-    .item_cont{
-      padding: 0px 10px;
-      .item_info{
-        font-size: 13px;
-        line-height: 1.7;
-      }
-    }
+  & ul{
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -89,7 +64,7 @@
   & ul{
     display: flex;
     font-size: 15px;
-    & li{
+    & button{
       padding: 0px 15px;
       font-family: 'Nanum Gothic', sans-serif;
     }

@@ -1,26 +1,60 @@
 import React, { Component, Fragment} from 'react';
-import { Link } from 'react-router-dom';
 import Item from '../../Components/Item/Item';
-import { ItemList } from '../../Data/Data';
+import Buttons from './Buttons';
+import {ItemList} from '../../Data/Data';
 import '../../Styles/reset.scss';
 import '../Category/Category.scss';
+import '../../Components/Item/Item';
 
-class Category extends Component {
+export default class Category extends Component {
   constructor(props){
     super(props);
     this.state = {
-      itemList : []
+      pager: {},
+      product : [],
+      currentIdx: 1,
+      nowItemList : [],
+      CategoryId : 0,
     }
   }
 
+  // 백 mapping
   componentDidMount() {
-    this.setState({
-      itemList: ItemList
-    });
+    // fetch(`http://10.58.0.114:8000/products/product_list/0/all` , {
+    fetch('/data/product.json' , {  
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+      const { RESULT } = data;
+      console.log(data.RESULT);
+      this.setState({
+        itemList: data.RESULT,
+        nowItemList: RESULT[0],
+      });
+    })
   }
-  render() { 
-    const {itemList} = this.state;
 
+  //Mock data
+  // componentDidMount() {
+  //   fetch(``)
+  //   .then((res) => res.json())
+  //   .then((res) => this.setState({ }))
+  //   this.setState({
+  //     product: ItemList,
+  //   })
+  // }
+
+  fetchCategory = (e) => {
+    const LIMIT = 12;
+    const offset = e.target.dataset.idx;
+
+    fetch(``)
+  }
+
+  render() { 
+    const { nowItemList , product, currentIdx } = this.state;
+    const { fetchCategory } = this;
     return (
       <Fragment>
       <section className="category">
@@ -36,17 +70,23 @@ class Category extends Component {
                 <li>높은가격순</li>
               </ul>
             </div>
-          </div>   
+          </div>
           <div className="goods_list_item">
             <ul>
-              {itemList.map((item => {
+              {nowItemList?.map((product => {   //nowItemList
                 return (
                 <Item
-                  url={item.url}
-                  sale={item.sale}
-                  title={item.item}
-                  price={item.price}
-                  itemId={item.itemId}
+                  main_image={product.main_image}
+                  name={product.name}
+                  money_replace={product.money_replace}
+                  price={product.price}
+                  CategoryId={product.CategoryId}
+                  rate={product.rate}
+                  /*itemId = {product.itemId}
+                  url = {product.url}
+                  sale = {product.sale}
+                  item = {product.item}
+                  price = {product.price}*/
                 />
                 )
               }))}
@@ -54,10 +94,10 @@ class Category extends Component {
           </div>
           <div className="pagination">
             <ul>
-              <li className="page_one"><Link to=""/>1</li>
-              <li><Link to=""/>2</li>
-              <li><Link to=""/>3</li>
-              <li><Link to=""/>4</li>
+              <Buttons
+              currentIdx={currentIdx}
+              fetchCategory={fetchCategory}
+              />
             </ul>
           </div>
           </div>
@@ -66,5 +106,3 @@ class Category extends Component {
     );
   }
 }
-
-export default Category;

@@ -11,20 +11,31 @@ export default class Main extends Component {
     this.state = {
       hotList: [],
       newList: [],
-      recommendList: [],
       saleList: [],
+      recommendList: [],
     }
   }
 
   componentDidMount() {
-    this.setState({
-      hotList: ItemList.slice(0,4),
-      newList: ItemList.slice(4,8),
-      recommendList: RecommendList,
-      saleList: ItemList.slice(8,12),
+    // fetch(`http://10.58.0.114:8000/products/product_list/0/all` , {
+    fetch('/data/product.json' , {  
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+      
+      console.log(data.RESULT);
+      this.setState({
+        itemList: data.RESULT,
+        nowItemList: data.RESULT[0],
+        recommendList: RecommendList,
+        hotList: data.RESULT[0].slice(0,4),
+        newList: data.RESULT[0].slice(4,12),
+        saleList: data.RESULT[1].slice(0,8),
+      });
     })
   }
-
+  
   render() {
     const { hotList, newList, recommendList, saleList } = this.state;
     return (

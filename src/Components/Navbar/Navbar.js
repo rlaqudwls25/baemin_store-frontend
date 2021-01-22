@@ -69,7 +69,7 @@ export default class Navbar extends Component {
                   className={focusdMenu === id && 'focus'}
                   onClick={() => updateFocus(id)}
                 >
-                  <Link to={`/category/${id}`}>{content}</Link>
+                  <Link to={link}>{content}</Link>
                 </li>  
               )}
             )}
