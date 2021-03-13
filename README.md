@@ -7,7 +7,7 @@
 
 <h2>:two: Member</h2>
 <p>Front : 김병진 김태형 김동하 </p>
-<p>Back : 정지원 </p>
+<p>Back : 정지원 이혜성</p>
 
 <h2>:three: Skills</h2>
 <li>JavaScript(ES6)</li>
