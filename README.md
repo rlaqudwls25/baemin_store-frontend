@@ -1,5 +1,7 @@
 <h1>BAEMIN_STORE 🤜🏻</h1>
 
+<img src="https://user-images.githubusercontent.com/65752350/111026013-55084e80-842b-11eb-9d16-5a5277f174bc.png"></img>
+
 <h3>배민문방구 홈페이지 클론 프로젝트!!</h3>
 
 <h2>:one: Project 기간</h2>
